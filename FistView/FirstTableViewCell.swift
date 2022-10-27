@@ -30,7 +30,6 @@ class FirstTableViewCell: UITableViewCell {
     }()
     var slider: UISlider {
         let greenSlider = UISlider(frame: CGRect(x: 20, y: 80, width: 350, height: 10))
-//        greenSlider.layer.position = CGPoint(x: 150, y: 90)
         greenSlider.backgroundColor = UIColor.white
         greenSlider.layer.cornerRadius = 10.0
         greenSlider.layer.shadowOpacity = 0.5
@@ -40,7 +39,7 @@ class FirstTableViewCell: UITableViewCell {
         greenSlider.value = 0.5
         greenSlider.maximumTrackTintColor = UIColor.gray
         greenSlider.minimumTrackTintColor = UIColor.black
-//        greenSlider.addTarget(self, action: #selector(onChangeValueSlider(sender:)), for: UIControl.valueChanged)
+        greenSlider.addTarget(self, action: #selector(onChangeValueSlider(sender:)), for: UIControl.Event(rawValue: 1))
         return greenSlider
     }
     
@@ -86,9 +85,6 @@ class FirstTableViewCell: UITableViewCell {
             make.top.trailing.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-15)
         }
-//        slider.snp.makeConstraints { make in
-//            make.top.equalTo(100)
-//        }
         
     }
 

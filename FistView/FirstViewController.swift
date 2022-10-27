@@ -57,6 +57,9 @@ class FirstViewController: UIViewController {
         dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "00%2"))
         dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "00%3"))
     }
+    
+  
+    
 }
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
@@ -71,5 +74,17 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //스와이프구현
+        let actions1 = UIContextualAction(style: .normal, title: "Delete", handler: { action, view, completionHaldler in
+            completionHaldler(true)  //셀 지우기
+            let cell = self.dataSource.remove(at: indexPath.row)
+            tableView.reloadData()
+        })
+        actions1.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [actions1])
     }
 }
