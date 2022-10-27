@@ -28,21 +28,43 @@ class FirstTableViewCell: UITableViewCell {
         label.textColor = UIColor.gray
         return label
     }()
+    var slider: UISlider {
+        let greenSlider = UISlider(frame: CGRect(x: 20, y: 80, width: 350, height: 10))
+//        greenSlider.layer.position = CGPoint(x: 150, y: 90)
+        greenSlider.backgroundColor = UIColor.white
+        greenSlider.layer.cornerRadius = 10.0
+        greenSlider.layer.shadowOpacity = 0.5
+        greenSlider.layer.masksToBounds = false
+        greenSlider.minimumValue = 0
+        greenSlider.maximumValue = 10
+        greenSlider.value = 0.5
+        greenSlider.maximumTrackTintColor = UIColor.gray
+        greenSlider.minimumTrackTintColor = UIColor.black
+//        greenSlider.addTarget(self, action: #selector(onChangeValueSlider(sender:)), for: UIControl.valueChanged)
+        return greenSlider
+    }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//    }
+    
+    @objc func onChangeValueSlider(sender: UISlider){
+        
+    }
+    //    override func setSelected(_ selected: Bool, animated: Bool) {
+    //        super.setSelected(selected, animated: animated)
+    //
+    //    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(dateLabel)
         addSubview(titleLabel)
         addSubview(dayLabel)
+        addSubview(slider)
         configure()
     }
     
@@ -64,6 +86,9 @@ class FirstTableViewCell: UITableViewCell {
             make.top.trailing.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-15)
         }
+//        slider.snp.makeConstraints { make in
+//            make.top.equalTo(100)
+//        }
         
     }
 
