@@ -53,9 +53,9 @@ class FirstViewController: UIViewController {
     }
     
     private func loadData() {
-        dataSource.append(.init(leftTitle: "제목1", leftdey: "1월~12월1", rightdate: "00%1"))
-        dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "00%2"))
-        dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "00%3"))
+        dataSource.append(.init(leftTitle: "제목1", leftdey: "1월~12월1", rightdate: "01%"))
+        dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "02%"))
+        dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "03%"))
     }
     
   

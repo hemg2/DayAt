@@ -99,3 +99,6 @@ extension FirstTableViewCell {
         
     }
 }
+
+
+// 디데이 계산법 디데이 - 투데이 = 벨류값을 저장한다
