@@ -1,0 +1,6 @@
+framework module Pods_DayAt {
+  umbrella header "Pods-DayAt-umbrella.h"
+
+  export *
+  module * { export * }
+}
