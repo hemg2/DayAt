@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = self.rightNavButton
         
         tableViewLayout()
-        
+        loadData()
     }
     
     
@@ -47,7 +47,7 @@ class FirstViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
+//        tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -64,10 +64,7 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FirstTableViewCell
-//        cell.bind(model: dataSource[indexPath.row])
-        cell.dateLabel.text = "date"
-        cell.titleLabel.text = "title"
-        cell.dayLabel.text = "day"
+        cell.bind(model: dataSource[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

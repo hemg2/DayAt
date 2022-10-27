@@ -24,7 +24,7 @@ class FirstTableViewCell: UITableViewCell {
     }()
     var dayLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = UIColor.gray
         return label
     }()
@@ -52,20 +52,17 @@ class FirstTableViewCell: UITableViewCell {
     
     func configure() {
         dateLabel.snp.makeConstraints { make in
-            make.leading.top.equalTo(20)
-            addSubview(dateLabel)
+            make.top.equalTo(15)
+            make.leading.equalTo(15)
         }
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.equalTo(50)
-            addSubview(titleLabel)
+            make.top.equalTo(40)
+            make.leading.equalTo(15)
         }
         
         dayLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(40)
-            //                make.bottom.equalToSuperview().offset(-40)
-            make.trailing.equalToSuperview().offset(-40)
-            //                make.leading.equalToSuperview().offset(40)
-            addSubview(dayLabel)
+            make.top.trailing.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-15)
         }
         
     }
