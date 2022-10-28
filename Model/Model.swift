@@ -26,15 +26,34 @@ struct ThreeTitle {
     let title: String
 }
 
+struct ForeTitle {
+    let title: String
+}
+
+struct FiveTitle {
+    let title: String
+}
+
+struct SixTitle {
+    let title: String
+}
+
+struct SevenTitle {
+    let title: String
+}
+
+struct EightTitle {
+    let title: String
+}
+
 //struct Model {
-//    let first: [FirstTitle]
-//    let second: [SecondTitle]
-//    let three: [ThreeTitle]
+//    let first: String
+//    let second: String
+//    let three: String
+//}
+//
+//struct SetModel {
+//    let title: String
+//    let models: [Model]
 //}
 
-
-enum CellModel {
-    case one(title: String)
-    case two(title: String)
-    case three(title: String)
-}

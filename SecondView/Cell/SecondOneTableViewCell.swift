@@ -14,7 +14,7 @@ class SecondOneTableViewCell: UITableViewCell {
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = UIColor.gray
         return label
     }()
@@ -39,6 +39,7 @@ class SecondOneTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     func configure() {
         titleLabel.snp.makeConstraints { make in

@@ -39,7 +39,7 @@ class FirstTableViewCell: UITableViewCell {
         greenSlider.value = 0.5
         greenSlider.maximumTrackTintColor = UIColor.gray
         greenSlider.minimumTrackTintColor = UIColor.black
-        greenSlider.addTarget(self, action: #selector(onChangeValueSlider(sender:)), for: UIControl.Event(rawValue: 1))
+        greenSlider.addTarget(self, action: #selector(onChangeValueSlider(sender:)), for: UIControl.Event.valueChanged)
         return greenSlider
     }
     

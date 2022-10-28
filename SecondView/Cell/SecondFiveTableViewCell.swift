@@ -1,20 +1,19 @@
 //
-//  SecondTwoTableViewCell.swift
+//  SecondFiveTableViewCell.swift
 //  DayAt
 //
-//  Created by 1 on 2022/10/27.
+//  Created by 1 on 2022/10/28.
 //
 
 import UIKit
 import SnapKit
-
-class SecondTwoTableViewCell: UITableViewCell {
-    static let identifier = "SecondTwoTableViewCell"
+class SecondFiveTableViewCell: UITableViewCell {
+    static let identifier = "SecondFiveTableViewCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 23)
+        label.textColor = UIColor.darkGray
         return label
     }()
     
@@ -41,15 +40,15 @@ class SecondTwoTableViewCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(10)
-            make.leading.equalTo(10)
+            make.top.equalTo(30)
+            make.leading.equalTo(15)
         }
     }
 }
 
 
-extension SecondTwoTableViewCell {
-    public func secondBind(model: SecondTitle) {
+extension SecondFiveTableViewCell {
+    public func fiveBind(model: FiveTitle) {
         titleLabel.text = model.title
     }
 }

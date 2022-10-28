@@ -1,20 +1,20 @@
 //
-//  SecondThreeTableViewCell.swift
+//  SecondEightTableViewCell.swift
 //  DayAt
 //
-//  Created by 1 on 2022/10/27.
+//  Created by 1 on 2022/10/28.
 //
 
 import UIKit
 import SnapKit
 
-class SecondThreeTableViewCell: UITableViewCell {
-    static let identifier = "SecondThreeTableViewCell"
+class SecondEightTableViewCell: UITableViewCell {
+    static let identifier = "SecondEightTableViewCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = UIColor.darkGray
         return label
     }()
     
@@ -41,15 +41,15 @@ class SecondThreeTableViewCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(10)
-            make.leading.equalTo(10)
+            make.top.equalTo(30)
+            make.leading.equalTo(15)
         }
     }
 }
 
 
-extension SecondThreeTableViewCell {
-    public func threeBind(model: ThreeTitle) {
+extension SecondEightTableViewCell {
+    public func eightBind(model: EightTitle) {
         titleLabel.text = model.title
     }
 }
