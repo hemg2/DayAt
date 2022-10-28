@@ -18,6 +18,21 @@ class SecondThreeTableViewCell: UITableViewCell {
         return label
     }()
     
+    lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.backgroundColor = UIColor.white
+        datePicker.layer.cornerRadius = 5.0
+        datePicker.layer.shadowOpacity = 0.5
+        datePicker.addTarget(self, action: #selector(onDidChangeDate(sender:)), for: .valueChanged)
+        return datePicker
+    }()
+    @objc func onDidChangeDate(sender: UIDatePicker){
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd hh:mm"
+        let selectedDate: String = dateFormatter.string(from: sender.date)
+//        self.textField.text = selectedDate
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +47,7 @@ class SecondThreeTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
+        addSubview(datePicker)
         configure()
     }
     
@@ -42,6 +58,10 @@ class SecondThreeTableViewCell: UITableViewCell {
     func configure() {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(10)
+            make.leading.equalTo(10)
+        }
+        datePicker.snp.makeConstraints { make in
+            make.top.equalTo(42.5)
             make.leading.equalTo(10)
         }
     }

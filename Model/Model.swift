@@ -40,10 +40,18 @@ struct SixTitle {
 
 struct SevenTitle {
     let title: String
+    let subTitle: String
 }
 
 struct EightTitle {
     let title: String
+}
+
+struct ThreeViewTitle {
+    let title: String
+//    let qa: String
+//    let buy: String
+//    let use: String
 }
 
 //struct Model {

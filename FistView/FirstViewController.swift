@@ -21,17 +21,27 @@ class FirstViewController: UIViewController {
         let button = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(add))
         return button
     }
+    var leftNavButton: UIBarButtonItem {
+        let button = UIBarButtonItem(title: "-", style: .plain, target: self, action: #selector(left))
+        return button
+    }
     
     @objc func add(_ sender: Any) {
         let secondView = SecondViewController()
         self.navigationController?.pushViewController(secondView, animated: true)
     }
+    @objc func left(_ sender: Any) {
+        let threeView = ThreeViewController()
+        self.navigationController?.pushViewController(threeView, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
         title = "홈"
-        self.navigationItem.rightBarButtonItem = self.rightNavButton
+        self.navigationItem.rightBarButtonItem = rightNavButton
+        self.navigationItem.leftBarButtonItem = leftNavButton
         
         tableViewLayout()
         loadData()

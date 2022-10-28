@@ -89,7 +89,7 @@ class SecondViewController: UIViewController {
         dataSource4.append(.init(title: "기간으로설정"))
         dataSource5.append(.init(title: "매일 반복"))
         dataSource6.append(.init(title: "위젯 설정"))
-        dataSource7.append(.init(title: "알림"))
+        dataSource7.append(.init(title: "알림", subTitle: "끔"))
         dataSource8.append(.init(title: "캐릭터 선택"))
      
     }
@@ -151,6 +151,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 6 {
             let cell6 = tableView.dequeueReusableCell(withIdentifier: "SecondSevenTableViewCell", for: indexPath) as! SecondSevenTableViewCell
             cell6.sevenBind(model: dataSource7[indexPath.row])
+            cell6.accessoryType = .disclosureIndicator
             return cell6
         } else if indexPath.section == 7 {
             let cell7 = tableView.dequeueReusableCell(withIdentifier: "SecondEightTableViewCell", for: indexPath) as! SecondEightTableViewCell
@@ -168,7 +169,11 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 8//testModels.count// 걍 숫자로 표현 셀 갯수
+        return 10//testModels.count// 걍 숫자로 표현 셀 갯수
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+
 class SecondForeTableViewCell: UITableViewCell {
     static let identifier = "SecondForeTableViewCell"
     
@@ -16,23 +17,27 @@ class SecondForeTableViewCell: UITableViewCell {
         label.textColor = UIColor.darkGray
         return label
     }()
+    
     var controlSwicth: UISwitch = {
-        let swicth: UISwitch = UISwitch()
-        swicth.layer.position = CGPoint(x: 355, y: 45)
+        let swicth = UISwitch()
+        //        swicth.setOn(true, animated: true)
         swicth.isOn = true
-        swicth.addTarget(SecondForeTableViewCell.self, action: #selector(onClickSwitch(sender:)), for: UIControl.Event.valueChanged)
+        //        swicth.translatesAutoresizingMaskIntoConstraints = false
+        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        swicth.addTarget(SecondForeTableViewCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
         return swicth
     }()
+    
     @objc func onClickSwitch(sender: UISwitch) {
-        var text: String
         var color: UIColor
-        
+        print("콕콕콕")
         if sender.isOn {
-            text = "On"
             color = UIColor.gray
+            print("on")
         } else {
-            text = "Off"
             color = UIColor.orange
+            print("off")
         }
         self.backgroundColor = color
     }
@@ -63,7 +68,12 @@ class SecondForeTableViewCell: UITableViewCell {
             make.top.equalTo(30)
             make.leading.equalTo(15)
         }
+        controlSwicth.snp.makeConstraints { make in
+            make.top.equalTo(30)
+            make.trailing.equalTo(-15)
+        }
     }
+   
 }
 
 

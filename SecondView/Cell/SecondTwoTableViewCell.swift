@@ -18,6 +18,24 @@ class SecondTwoTableViewCell: UITableViewCell {
         return label
     }()
     
+    var textfield : UITextField = {
+       let textfield = UITextField()
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.placeholder = "제목을 입력해주세요"
+//        textfield.text = "제목 만들어주세요"
+        textfield.font = UIFont.systemFont(ofSize: 30)
+        textfield.textColor = UIColor.gray
+        textfield.layer.cornerRadius = 1
+        textfield.layer.borderWidth = 0
+        textfield.layer.borderColor = UIColor.gray.cgColor.copy(alpha: 0.7)
+        
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textfield.frame.height))
+        textfield.leftView = paddingView
+        textfield.leftViewMode = UITextField.ViewMode.always
+        
+        return textfield
+    }()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +49,8 @@ class SecondTwoTableViewCell: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(titleLabel)
+//        addSubview(titleLabel)
+        addSubview(textfield)
         configure()
     }
     
@@ -40,8 +59,12 @@ class SecondTwoTableViewCell: UITableViewCell {
     }
     
     func configure() {
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(10)
+//        titleLabel.snp.makeConstraints { make in
+//            make.top.equalTo(10)
+//            make.leading.equalTo(10)
+//        }
+        textfield.snp.makeConstraints { make in
+            make.top.equalTo(25)
             make.leading.equalTo(10)
         }
     }
@@ -50,6 +73,7 @@ class SecondTwoTableViewCell: UITableViewCell {
 
 extension SecondTwoTableViewCell {
     public func secondBind(model: SecondTitle) {
-        titleLabel.text = model.title
+//        titleLabel.text = model.title
+        textfield.text = model.title
     }
 }

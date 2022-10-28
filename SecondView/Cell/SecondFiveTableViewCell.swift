@@ -17,6 +17,28 @@ class SecondFiveTableViewCell: UITableViewCell {
         return label
     }()
     
+    var controlSwicth: UISwitch = {
+        let swicth = UISwitch()
+        //        swicth.setOn(true, animated: true)
+        swicth.isOn = true
+        //        swicth.translatesAutoresizingMaskIntoConstraints = false
+        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        swicth.addTarget(SecondForeTableViewCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        return swicth
+    }()
+    
+    @objc func onClickSwitch(sender: UISwitch) {
+        var color: UIColor
+        print("콕콕콕")
+        if sender.isOn {
+            color = UIColor.gray
+            print("on")
+        } else {
+            color = UIColor.orange
+            print("off")
+        }
+        self.backgroundColor = color
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +53,7 @@ class SecondFiveTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
+        addSubview(controlSwicth)
         configure()
     }
     
@@ -42,6 +65,10 @@ class SecondFiveTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(30)
             make.leading.equalTo(15)
+        }
+        controlSwicth.snp.makeConstraints { make in
+            make.top.equalTo(30)
+            make.trailing.equalTo(-15)
         }
     }
 }
