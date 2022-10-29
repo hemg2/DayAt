@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class SecondTwoTableViewCell: UITableViewCell {
-    static let identifier = "SecondTwoTableViewCell"
+class SecondTitleCell: UITableViewCell {
+    static let identifier = "SecondTitleCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -71,7 +71,7 @@ class SecondTwoTableViewCell: UITableViewCell {
 }
 
 
-extension SecondTwoTableViewCell {
+extension SecondTitleCell {
     public func secondBind(model: SecondTitle) {
 //        titleLabel.text = model.title
         textfield.text = model.title

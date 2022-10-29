@@ -42,10 +42,10 @@ class ThreeViewController: UIViewController {
     func tableViewLayout() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ThreeTableViewCell.self, forCellReuseIdentifier: "ThreeTableViewCell")
-        tableView.register(ThreeOneTableViewCell.self, forCellReuseIdentifier: "ThreeOneTableViewCell")
-        tableView.register(ThreeTwoTableViewCell.self, forCellReuseIdentifier: "ThreeTwoTableViewCell")
-        tableView.register(ThreesTableViewCell.self, forCellReuseIdentifier: "ThreesTableViewCell")
+        tableView.register(ThreeSetCell.self, forCellReuseIdentifier: "ThreeSetCell")
+        tableView.register(ThreeSupportCell.self, forCellReuseIdentifier: "ThreeSupportCell")
+        tableView.register(ThreeBuyCell.self, forCellReuseIdentifier: "ThreeBuyCell")
+        tableView.register(ThreesUseCell.self, forCellReuseIdentifier: "ThreesUseCell")
         
         tableView.rowHeight = 100
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -81,28 +81,26 @@ extension ThreeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeTableViewCell", for: indexPath) as! ThreeTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeSetCell", for: indexPath) as! ThreeSetCell
             cell.bind(model: dataSource[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
         } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeOneTableViewCell", for: indexPath) as! ThreeOneTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeSupportCell", for: indexPath) as! ThreeSupportCell
             cell.bind(model: dataSource1[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
         } else if indexPath.section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeTwoTableViewCell", for: indexPath) as! ThreeTwoTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeBuyCell", for: indexPath) as! ThreeBuyCell
             cell.bind(model: dataSource2[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
         } else if indexPath.section == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreesTableViewCell", for: indexPath) as! ThreesTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreesUseCell", for: indexPath) as! ThreesUseCell
             cell.bind(model: dataSource3[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
         }
-        
-        
         
         return UITableViewCell()
     }

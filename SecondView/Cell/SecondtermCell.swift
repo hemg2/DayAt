@@ -1,5 +1,5 @@
 //
-//  SecondSixTableViewCell.swift
+//  SecondForeTableViewCell.swift
 //  DayAt
 //
 //  Created by 1 on 2022/10/28.
@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class SecondSixTableViewCell: UITableViewCell {
-    static let identifier = "SecondSixTableViewCell"
+class SecondtermCell: UITableViewCell {
+    static let identifier = "SecondtermCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -18,13 +18,14 @@ class SecondSixTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var controlSwicth: UISwitch = {
+    var controlSwicth: UISwitch = {
         let swicth = UISwitch()
         //        swicth.setOn(true, animated: true)
         swicth.isOn = true
         //        swicth.translatesAutoresizingMaskIntoConstraints = false
         swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
-        swicth.addTarget(SecondForeTableViewCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        swicth.addTarget(SecondtermCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
         return swicth
     }()
     
@@ -40,8 +41,6 @@ class SecondSixTableViewCell: UITableViewCell {
         }
         self.backgroundColor = color
     }
-
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -70,16 +69,17 @@ class SecondSixTableViewCell: UITableViewCell {
             make.leading.equalTo(15)
         }
         controlSwicth.snp.makeConstraints { make in
-                   make.top.equalTo(30)
-                   make.trailing.equalTo(-15)
-               }
+            make.top.equalTo(30)
+            make.trailing.equalTo(-15)
+        }
     }
+   
 }
 
 
-extension SecondSixTableViewCell {
-    public func sixBind(model: SixTitle) {
+extension SecondtermCell {
+    public func foredBind(model: ForeTitle) {
         titleLabel.text = model.title
+       
     }
-    
 }

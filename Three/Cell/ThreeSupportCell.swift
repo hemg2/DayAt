@@ -1,45 +1,38 @@
 //
-//  SecondSevenTableViewCell.swift
+//  ThreeOneTableViewCell.swift
 //  DayAt
 //
-//  Created by 1 on 2022/10/28.
+//  Created by 1 on 2022/10/29.
 //
 
 import UIKit
-import SnapKit
 
-class SecondSevenTableViewCell: UITableViewCell {
-    static let identifier = "SecondSevenTableViewCell"
+class ThreeSupportCell: UITableViewCell {
+    static let identifier = "ThreeSupportCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 23)
-        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 25)
+        label.textColor = UIColor.gray
         return label
     }()
-    var titleLabel1: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17)
-        label.textColor = UIColor.darkGray
-        return label
-    }()
-    
+   
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
-        addSubview(titleLabel1)
         configure()
+
     }
     
     required init?(coder: NSCoder) {
@@ -48,20 +41,14 @@ class SecondSevenTableViewCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(30)
+            make.top.equalTo(15)
             make.leading.equalTo(15)
-        }
-        titleLabel1.snp.makeConstraints { make in
-            make.top.equalTo(30)
-            make.trailing.equalTo(-40)
         }
     }
 }
 
-
-extension SecondSevenTableViewCell {
-    public func sevenBind(model: SevenTitle) {
+extension ThreeSupportCell {
+    public func bind(model: ThreeViewTitle) {
         titleLabel.text = model.title
-        titleLabel1.text = model.subTitle
     }
 }

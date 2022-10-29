@@ -1,38 +1,37 @@
 //
-//  SecondEightTableViewCell.swift
+//  ThreesTableViewCell.swift
 //  DayAt
 //
-//  Created by 1 on 2022/10/28.
+//  Created by 1 on 2022/10/29.
 //
 
 import UIKit
-import SnapKit
 
-class SecondEightTableViewCell: UITableViewCell {
-    static let identifier = "SecondEightTableViewCell"
+class ThreesUseCell: UITableViewCell {
+    static let identifier = "ThreesUseCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 25)
+        label.textColor = UIColor.gray
         return label
     }()
-    
-    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
         configure()
+       
     }
     
     required init?(coder: NSCoder) {
@@ -41,15 +40,14 @@ class SecondEightTableViewCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(30)
+            make.top.equalTo(15)
             make.leading.equalTo(15)
         }
     }
 }
 
-
-extension SecondEightTableViewCell {
-    public func eightBind(model: EightTitle) {
+extension ThreesUseCell {
+    public func bind(model: ThreeViewTitle) {
         titleLabel.text = model.title
     }
 }

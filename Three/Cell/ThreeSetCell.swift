@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ThreeTableViewCell: UITableViewCell {
-    static let identifier = "ThreeTableViewCell"
+class ThreeSetCell: UITableViewCell {
+    static let identifier = "ThreeSetCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -66,7 +66,7 @@ class ThreeTableViewCell: UITableViewCell {
     }
 }
 
-extension ThreeTableViewCell {
+extension ThreeSetCell {
     public func bind(model: ThreeViewTitle) {
         titleLabel.text = model.title
     }

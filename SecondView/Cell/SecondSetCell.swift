@@ -1,5 +1,5 @@
 //
-//  SecondForeTableViewCell.swift
+//  SecondSixTableViewCell.swift
 //  DayAt
 //
 //  Created by 1 on 2022/10/28.
@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class SecondForeTableViewCell: UITableViewCell {
-    static let identifier = "SecondForeTableViewCell"
+class SecondSetCell: UITableViewCell {
+    static let identifier = "SecondSetCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -18,14 +18,13 @@ class SecondForeTableViewCell: UITableViewCell {
         return label
     }()
     
-    var controlSwicth: UISwitch = {
+    private lazy var controlSwicth: UISwitch = {
         let swicth = UISwitch()
         //        swicth.setOn(true, animated: true)
         swicth.isOn = true
         //        swicth.translatesAutoresizingMaskIntoConstraints = false
         swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
-        swicth.addTarget(SecondForeTableViewCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
-        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
+        swicth.addTarget(SecondSetCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
         return swicth
     }()
     
@@ -41,6 +40,8 @@ class SecondForeTableViewCell: UITableViewCell {
         }
         self.backgroundColor = color
     }
+
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -69,17 +70,16 @@ class SecondForeTableViewCell: UITableViewCell {
             make.leading.equalTo(15)
         }
         controlSwicth.snp.makeConstraints { make in
-            make.top.equalTo(30)
-            make.trailing.equalTo(-15)
-        }
+                   make.top.equalTo(30)
+                   make.trailing.equalTo(-15)
+               }
     }
-   
 }
 
 
-extension SecondForeTableViewCell {
-    public func foredBind(model: ForeTitle) {
+extension SecondSetCell {
+    public func sixBind(model: SixTitle) {
         titleLabel.text = model.title
-       
     }
+    
 }

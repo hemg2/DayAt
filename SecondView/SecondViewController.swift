@@ -8,21 +8,8 @@
 import UIKit
 import SnapKit
 
-enum CellList: CaseIterable {
-    case One
-    case Two
-    case Three
-}
-
-struct Cell {
-    let title: String
-    let day: String
-}
-
-let cellType = CellList.allCases
-
 class SecondViewController: UIViewController {
-    let cell = [SecondOneTableViewCell(), SecondTwoTableViewCell(), SecondThreeTableViewCell()]
+   
     
     private lazy var secondTableView: UITableView = {
         let tableView = UITableView()
@@ -62,14 +49,14 @@ class SecondViewController: UIViewController {
     func tableViewLayout() {
         view.addSubview(secondTableView)
         secondTableView.translatesAutoresizingMaskIntoConstraints = false
-        secondTableView.register(SecondOneTableViewCell.self, forCellReuseIdentifier: "SecondOneTableViewCell")
-        secondTableView.register(SecondTwoTableViewCell.self, forCellReuseIdentifier: "SecondTwoTableViewCell")
-        secondTableView.register(SecondThreeTableViewCell.self, forCellReuseIdentifier: "SecondThreeTableViewCell")
-        secondTableView.register(SecondForeTableViewCell.self, forCellReuseIdentifier: "SecondForeTableViewCell")
-        secondTableView.register(SecondFiveTableViewCell.self, forCellReuseIdentifier: "SecondFiveTableViewCell")
-        secondTableView.register(SecondSixTableViewCell.self, forCellReuseIdentifier: "SecondSixTableViewCell")
-        secondTableView.register(SecondSevenTableViewCell.self, forCellReuseIdentifier: "SecondSevenTableViewCell")
-        secondTableView.register(SecondEightTableViewCell.self, forCellReuseIdentifier: "SecondEightTableViewCell")
+        secondTableView.register(SecondMenuCell.self, forCellReuseIdentifier: "SecondMenuCell")
+        secondTableView.register(SecondTitleCell.self, forCellReuseIdentifier: "SecondTitleCell")
+        secondTableView.register(SecondDayCell.self, forCellReuseIdentifier: "SecondDayCell")
+        secondTableView.register(SecondtermCell.self, forCellReuseIdentifier: "SecondtermCell")
+        secondTableView.register(SecondEverydayCell.self, forCellReuseIdentifier: "SecondEverydayCell")
+        secondTableView.register(SecondSetCell.self, forCellReuseIdentifier: "SecondSetCell")
+        secondTableView.register(SecondAlarmCell.self, forCellReuseIdentifier: "SecondAlarmCell")
+        secondTableView.register(SecondCharacterCell.self, forCellReuseIdentifier: "SecondCharacterCell")
         
         secondTableView.rowHeight = 100
         secondTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -125,37 +112,37 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         if  indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SecondOneTableViewCell", for: indexPath) as! SecondOneTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SecondMenuCell", for: indexPath) as! SecondMenuCell
             cell.bind(model: dataSource[indexPath.row])
             return cell
         } else if indexPath.section == 1 {
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: "SecondTwoTableViewCell", for: indexPath) as! SecondTwoTableViewCell
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "SecondTitleCell", for: indexPath) as! SecondTitleCell
             cell1.secondBind(model: dataSource2	[indexPath.row])
             return cell1
         } else if indexPath.section == 2 {
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: "SecondThreeTableViewCell", for: indexPath) as! SecondThreeTableViewCell
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "SecondDayCell", for: indexPath) as! SecondDayCell
             cell2.threeBind(model: dataSource3[indexPath.row])
             return cell2
         } else if indexPath.section == 3 {
-            let cell3 = tableView.dequeueReusableCell(withIdentifier: "SecondForeTableViewCell", for: indexPath) as! SecondForeTableViewCell
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: "SecondtermCell", for: indexPath) as! SecondtermCell
             cell3.foredBind(model: dataSource4[indexPath.row])
 //            cell3.controlSwicth = UISwitch()
             return cell3
         } else if indexPath.section == 4 {
-            let cell4 = tableView.dequeueReusableCell(withIdentifier: "SecondFiveTableViewCell", for: indexPath) as! SecondFiveTableViewCell
+            let cell4 = tableView.dequeueReusableCell(withIdentifier: "SecondEverydayCell", for: indexPath) as! SecondEverydayCell
             cell4.fiveBind(model: dataSource5[indexPath.row])
             return cell4
         } else if indexPath.section == 5 {
-            let cell5 = tableView.dequeueReusableCell(withIdentifier: "SecondSixTableViewCell", for: indexPath) as! SecondSixTableViewCell
+            let cell5 = tableView.dequeueReusableCell(withIdentifier: "SecondSetCell", for: indexPath) as! SecondSetCell
             cell5.sixBind(model: dataSource6[indexPath.row])
             return cell5
         } else if indexPath.section == 6 {
-            let cell6 = tableView.dequeueReusableCell(withIdentifier: "SecondSevenTableViewCell", for: indexPath) as! SecondSevenTableViewCell
+            let cell6 = tableView.dequeueReusableCell(withIdentifier: "SecondAlarmCell", for: indexPath) as! SecondAlarmCell
             cell6.sevenBind(model: dataSource7[indexPath.row])
             cell6.accessoryType = .disclosureIndicator
             return cell6
         } else if indexPath.section == 7 {
-            let cell7 = tableView.dequeueReusableCell(withIdentifier: "SecondEightTableViewCell", for: indexPath) as! SecondEightTableViewCell
+            let cell7 = tableView.dequeueReusableCell(withIdentifier: "SecondCharacterCell", for: indexPath) as! SecondCharacterCell
             cell7.eightBind(model: dataSource8[indexPath.row])
             return cell7
         }

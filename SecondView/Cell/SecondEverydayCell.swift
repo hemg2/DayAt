@@ -7,8 +7,8 @@
 
 import UIKit
 import SnapKit
-class SecondFiveTableViewCell: UITableViewCell {
-    static let identifier = "SecondFiveTableViewCell"
+class SecondEverydayCell: UITableViewCell {
+    static let identifier = "SecondEverydayCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -23,7 +23,7 @@ class SecondFiveTableViewCell: UITableViewCell {
         swicth.isOn = true
         //        swicth.translatesAutoresizingMaskIntoConstraints = false
         swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
-        swicth.addTarget(SecondForeTableViewCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        swicth.addTarget(SecondEverydayCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
         return swicth
     }()
     
@@ -74,7 +74,7 @@ class SecondFiveTableViewCell: UITableViewCell {
 }
 
 
-extension SecondFiveTableViewCell {
+extension SecondEverydayCell {
     public func fiveBind(model: FiveTitle) {
         titleLabel.text = model.title
     }
