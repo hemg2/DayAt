@@ -15,6 +15,14 @@ class ThreeViewController: UIViewController {
         return tableView
     }()
     
+    var leftNavButton: UIBarButtonItem {
+        let button = UIBarButtonItem(title: "x", style: .plain, target: self, action: #selector(left))
+        return button
+    }
+    @objc func left(_ sender: Any) {
+        let threeView = FirstViewController()
+        self.navigationController?.pushViewController(threeView, animated: true)
+    }
     var dataSource = [ThreeViewTitle]()
     var dataSource1 = [ThreeViewTitle]()
     var dataSource2 = [ThreeViewTitle]()
@@ -24,6 +32,7 @@ class ThreeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = "메뉴"
+        self.navigationItem.leftBarButtonItem = leftNavButton
         tableViewLayout()
         loadData()
 

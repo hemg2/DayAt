@@ -80,5 +80,6 @@ class SecondForeTableViewCell: UITableViewCell {
 extension SecondForeTableViewCell {
     public func foredBind(model: ForeTitle) {
         titleLabel.text = model.title
+       
     }
 }

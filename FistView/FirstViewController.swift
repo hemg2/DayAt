@@ -32,6 +32,7 @@ class FirstViewController: UIViewController {
     }
     @objc func left(_ sender: Any) {
         let threeView = ThreeViewController()
+//        threeView.modalPresentationStyle = .fullScreen
         self.navigationController?.present(threeView, animated: true)
     }
     

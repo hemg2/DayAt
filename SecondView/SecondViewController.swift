@@ -139,6 +139,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 3 {
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "SecondForeTableViewCell", for: indexPath) as! SecondForeTableViewCell
             cell3.foredBind(model: dataSource4[indexPath.row])
+//            cell3.controlSwicth = UISwitch()
             return cell3
         } else if indexPath.section == 4 {
             let cell4 = tableView.dequeueReusableCell(withIdentifier: "SecondFiveTableViewCell", for: indexPath) as! SecondFiveTableViewCell
