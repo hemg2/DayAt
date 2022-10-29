@@ -32,7 +32,7 @@ class FirstViewController: UIViewController {
     }
     @objc func left(_ sender: Any) {
         let threeView = ThreeViewController()
-        self.navigationController?.pushViewController(threeView, animated: true)
+        self.navigationController?.present(threeView, animated: true)
     }
     
     override func viewDidLoad() {

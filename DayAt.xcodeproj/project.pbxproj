@@ -25,6 +25,9 @@
 		63BEC0A4290BBF27006487BC /* SecondEightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0A3290BBF27006487BC /* SecondEightTableViewCell.swift */; };
 		63BEC0A7290C1A07006487BC /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0A6290C1A07006487BC /* ThreeViewController.swift */; };
 		63BEC0AA290C1DE6006487BC /* ThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0A9290C1DE6006487BC /* ThreeTableViewCell.swift */; };
+		63BEC0AC290CD700006487BC /* ThreeTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0AB290CD700006487BC /* ThreeTwoTableViewCell.swift */; };
+		63BEC0AE290CD722006487BC /* ThreeOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0AD290CD722006487BC /* ThreeOneTableViewCell.swift */; };
+		63BEC0B0290CD73B006487BC /* ThreesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0AF290CD73B006487BC /* ThreesTableViewCell.swift */; };
 		8BEDF6F67DD2536FE37334DC /* Pods_DayAt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D25EF7D925AD25151370561 /* Pods_DayAt.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		63BEC0A3290BBF27006487BC /* SecondEightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondEightTableViewCell.swift; sourceTree = "<group>"; };
 		63BEC0A6290C1A07006487BC /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 		63BEC0A9290C1DE6006487BC /* ThreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0AB290CD700006487BC /* ThreeTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTwoTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0AD290CD722006487BC /* ThreeOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeOneTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0AF290CD73B006487BC /* ThreesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreesTableViewCell.swift; sourceTree = "<group>"; };
 		A1A6C1D8DBD6EA670726AC8B /* Pods-DayAt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayAt.debug.xcconfig"; path = "Target Support Files/Pods-DayAt/Pods-DayAt.debug.xcconfig"; sourceTree = "<group>"; };
 		AA21BD9332694E9275BC6242 /* Pods-DayAt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayAt.release.xcconfig"; path = "Target Support Files/Pods-DayAt/Pods-DayAt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				63BEC0A9290C1DE6006487BC /* ThreeTableViewCell.swift */,
+				63BEC0AD290CD722006487BC /* ThreeOneTableViewCell.swift */,
+				63BEC0AB290CD700006487BC /* ThreeTwoTableViewCell.swift */,
+				63BEC0AF290CD73B006487BC /* ThreesTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -292,16 +301,19 @@
 				63BEC09E290BBE9E006487BC /* SecondFiveTableViewCell.swift in Sources */,
 				63BEC097290A6F35006487BC /* SecondTwoTableViewCell.swift in Sources */,
 				63BEC08B290A0E41006487BC /* FirstViewController.swift in Sources */,
+				63BEC0AE290CD722006487BC /* ThreeOneTableViewCell.swift in Sources */,
 				63BEC099290A6F59006487BC /* SecondThreeTableViewCell.swift in Sources */,
 				63BEC076290A0B02006487BC /* AppDelegate.swift in Sources */,
 				63BEC08D290A0E89006487BC /* FirstTableViewCell.swift in Sources */,
 				63BEC09C290BBE87006487BC /* SecondForeTableViewCell.swift in Sources */,
 				63BEC0A4290BBF27006487BC /* SecondEightTableViewCell.swift in Sources */,
+				63BEC0AC290CD700006487BC /* ThreeTwoTableViewCell.swift in Sources */,
 				63BEC093290A1EEC006487BC /* Model.swift in Sources */,
 				63BEC0A7290C1A07006487BC /* ThreeViewController.swift in Sources */,
 				63BEC090290A0FBD006487BC /* SecondViewController.swift in Sources */,
 				63BEC0A2290BBF11006487BC /* SecondSevenTableViewCell.swift in Sources */,
 				63BEC095290A6A22006487BC /* SecondOneTableViewCell.swift in Sources */,
+				63BEC0B0290CD73B006487BC /* ThreesTableViewCell.swift in Sources */,
 				63BEC0A0290BBEFB006487BC /* SecondSixTableViewCell.swift in Sources */,
 				63BEC0AA290C1DE6006487BC /* ThreeTableViewCell.swift in Sources */,
 				63BEC078290A0B02006487BC /* SceneDelegate.swift in Sources */,

@@ -16,6 +16,10 @@ class ThreeViewController: UIViewController {
     }()
     
     var dataSource = [ThreeViewTitle]()
+    var dataSource1 = [ThreeViewTitle]()
+    var dataSource2 = [ThreeViewTitle]()
+    var dataSource3 = [ThreeViewTitle]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -30,6 +34,10 @@ class ThreeViewController: UIViewController {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ThreeTableViewCell.self, forCellReuseIdentifier: "ThreeTableViewCell")
+        tableView.register(ThreeOneTableViewCell.self, forCellReuseIdentifier: "ThreeOneTableViewCell")
+        tableView.register(ThreeTwoTableViewCell.self, forCellReuseIdentifier: "ThreeTwoTableViewCell")
+        tableView.register(ThreesTableViewCell.self, forCellReuseIdentifier: "ThreesTableViewCell")
+        
         tableView.rowHeight = 100
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -41,23 +49,63 @@ class ThreeViewController: UIViewController {
     
     private func loadData() {
         dataSource.append(.init(title: "설정"))
+        dataSource1.append(.init(title: "고객지원"))
+        dataSource2.append(.init(title: "구매 복구"))
+        dataSource3.append(.init(title: "사용법 다시보기"))
     }
     
 }
 
 extension ThreeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        if section == 0 {
+            return dataSource.count
+        } else if section == 1 {
+            return dataSource1.count
+        } else if section == 2 {
+            return dataSource2.count
+        } else if section == 3 {
+            return dataSource3.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeTableViewCell", for: indexPath) as! ThreeTableViewCell
-        cell.bind(model: dataSource[indexPath.row])
-        cell.accessoryType = .disclosureIndicator
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeTableViewCell", for: indexPath) as! ThreeTableViewCell
+            cell.bind(model: dataSource[indexPath.row])
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeOneTableViewCell", for: indexPath) as! ThreeOneTableViewCell
+            cell.bind(model: dataSource1[indexPath.row])
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        } else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeTwoTableViewCell", for: indexPath) as! ThreeTwoTableViewCell
+            cell.bind(model: dataSource2[indexPath.row])
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        } else if indexPath.section == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreesTableViewCell", for: indexPath) as! ThreesTableViewCell
+            cell.bind(model: dataSource3[indexPath.row])
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        }
+        
+        
+        
+        return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70  // 셀높이
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     
