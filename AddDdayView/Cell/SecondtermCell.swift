@@ -1,5 +1,5 @@
 //
-//  SecondFiveTableViewCell.swift
+//  SecondForeTableViewCell.swift
 //  DayAt
 //
 //  Created by 1 on 2022/10/28.
@@ -7,8 +7,15 @@
 
 import UIKit
 import SnapKit
-class SecondEverydayCell: UITableViewCell {
-    static let identifier = "SecondEverydayCell"
+
+protocol SecondtermCellDelegate {
+    func cellSwicth()
+}
+
+class SecondtermCell: UITableViewCell {
+    static let identifier = "SecondtermCell"
+    
+    var deleegate: SecondtermCellDelegate?
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -23,11 +30,13 @@ class SecondEverydayCell: UITableViewCell {
         swicth.isOn = true
         //        swicth.translatesAutoresizingMaskIntoConstraints = false
 //        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
-        swicth.addTarget(SecondEverydayCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        swicth.addTarget(SecondtermCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+//        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
         return swicth
     }()
     
     @objc func onClickSwitch(sender: UISwitch) {
+        deleegate?.cellSwicth()
         var color: UIColor
         print("콕콕콕")
         if sender.isOn {
@@ -52,9 +61,10 @@ class SecondEverydayCell: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(titleLabel)
-        addSubview(controlSwicth)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(controlSwicth)
         configure()
+        self.controlSwicth.addTarget(SecondtermCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -71,11 +81,13 @@ class SecondEverydayCell: UITableViewCell {
             make.trailing.equalTo(-15)
         }
     }
+   
 }
 
 
-extension SecondEverydayCell {
-    public func fiveBind(model: FiveTitle) {
+extension SecondtermCell {
+    public func foredBind(model: ForeTitle) {
         titleLabel.text = model.title
+//        controlSwicth.addTarget(self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
     }
 }

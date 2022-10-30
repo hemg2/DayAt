@@ -103,10 +103,10 @@
 		63BEC069290A0B02006487BC = {
 			isa = PBXGroup;
 			children = (
-				63BEC0B1290E445B006487BC /* TestView */,
 				63BEC091290A1EE2006487BC /* Model */,
-				63BEC089290A0E0C006487BC /* FistView */,
-				63BEC08E290A0FA6006487BC /* SecondView */,
+				63BEC0B1290E445B006487BC /* SetView */,
+				63BEC089290A0E0C006487BC /* MainView */,
+				63BEC08E290A0FA6006487BC /* AddDdayView */,
 				63BEC0A5290C19E4006487BC /* Three */,
 				63BEC074290A0B02006487BC /* DayAt */,
 				63BEC073290A0B02006487BC /* Products */,
@@ -135,22 +135,22 @@
 			path = DayAt;
 			sourceTree = "<group>";
 		};
-		63BEC089290A0E0C006487BC /* FistView */ = {
+		63BEC089290A0E0C006487BC /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				63BEC08A290A0E41006487BC /* FirstViewController.swift */,
 				63BEC08C290A0E89006487BC /* FirstTableViewCell.swift */,
 			);
-			path = FistView;
+			path = MainView;
 			sourceTree = "<group>";
 		};
-		63BEC08E290A0FA6006487BC /* SecondView */ = {
+		63BEC08E290A0FA6006487BC /* AddDdayView */ = {
 			isa = PBXGroup;
 			children = (
 				63BEC08F290A0FBD006487BC /* SecondViewController.swift */,
 				63BEC09A290BBE69006487BC /* Cell */,
 			);
-			path = SecondView;
+			path = AddDdayView;
 			sourceTree = "<group>";
 		};
 		63BEC091290A1EE2006487BC /* Model */ = {
@@ -196,14 +196,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		63BEC0B1290E445B006487BC /* TestView */ = {
+		63BEC0B1290E445B006487BC /* SetView */ = {
 			isa = PBXGroup;
 			children = (
 				63BEC0BA290E4915006487BC /* SetView */,
 				63BEC0BB290E4930006487BC /* Support */,
 				63BEC0B6290E467B006487BC /* TestBlackViewController.swift */,
 			);
-			path = TestView;
+			path = SetView;
 			sourceTree = "<group>";
 		};
 		63BEC0BA290E4915006487BC /* SetView */ = {
