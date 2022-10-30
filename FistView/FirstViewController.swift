@@ -50,20 +50,18 @@ class FirstViewController: UIViewController {
     
     
     func tableViewLayout() {
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.rowHeight = 100
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-//        tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: FirstTableViewCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
+            view.addSubview(tableView)
+            tableView.translatesAutoresizingMaskIntoConstraints = false
+            tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: "cell")
+            tableView.rowHeight = 100
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
     }
     
-    private func loadData() {
+    func loadData() {
         dataSource.append(.init(leftTitle: "제목1", leftdey: "1월~12월1", rightdate: "01%"))
         dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "02%"))
         dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "03%"))

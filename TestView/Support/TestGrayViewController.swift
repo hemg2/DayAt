@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class TestGrayViewController: UIViewController {
    
@@ -30,20 +31,19 @@ class TestGrayViewController: UIViewController {
     }
     
     func tableViewLayout() {
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(SupportTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(OpinionTableViewCell.self, forCellReuseIdentifier: "cell1")
-        tableView.register(FacebookTableViewCell.self, forCellReuseIdentifier: "cell2")
-        tableView.register(InstagramTableViewCell.self, forCellReuseIdentifier: "cell3")
-        tableView.register(TranslationTableViewCell.self, forCellReuseIdentifier: "cell4")
-        tableView.rowHeight = 100
-        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
+            view.addSubview(tableView)
+            tableView.translatesAutoresizingMaskIntoConstraints = false
+            tableView.register(SupportTableViewCell.self, forCellReuseIdentifier: "cell")
+            tableView.register(OpinionTableViewCell.self, forCellReuseIdentifier: "cell1")
+            tableView.register(FacebookTableViewCell.self, forCellReuseIdentifier: "cell2")
+            tableView.register(InstagramTableViewCell.self, forCellReuseIdentifier: "cell3")
+            tableView.register(TranslationTableViewCell.self, forCellReuseIdentifier: "cell4")
+            tableView.rowHeight = 100
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
     }
     func loadData() {
         dataSource.append(.init(title: "평가하기"))

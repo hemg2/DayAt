@@ -14,8 +14,6 @@ class SecondViewController: UIViewController, SecondtermCellDelegate {
         print("클릭")
     }
     
-   
-    
     private lazy var secondTableView: UITableView = {
         let tableView = UITableView()
         view.addSubview(tableView)
@@ -52,26 +50,24 @@ class SecondViewController: UIViewController, SecondtermCellDelegate {
     }
     
     func tableViewLayout() {
-        view.addSubview(secondTableView)
-        secondTableView.translatesAutoresizingMaskIntoConstraints = false
-        secondTableView.register(SecondMenuCell.self, forCellReuseIdentifier: "SecondMenuCell")
-        secondTableView.register(SecondTitleCell.self, forCellReuseIdentifier: "SecondTitleCell")
-        secondTableView.register(SecondDayCell.self, forCellReuseIdentifier: "SecondDayCell")
-        secondTableView.register(SecondtermCell.self, forCellReuseIdentifier: "SecondtermCell")
-        secondTableView.register(SecondEverydayCell.self, forCellReuseIdentifier: "SecondEverydayCell")
-        secondTableView.register(SecondSetCell.self, forCellReuseIdentifier: "SecondSetCell")
-        secondTableView.register(SecondAlarmCell.self, forCellReuseIdentifier: "SecondAlarmCell")
-        secondTableView.register(SecondCharacterCell.self, forCellReuseIdentifier: "SecondCharacterCell")
-        
-        secondTableView.rowHeight = 100
-        secondTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        secondTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        secondTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        secondTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        secondTableView.delegate = self
-        secondTableView.dataSource = self
-        secondTableView.allowsMultipleSelection = true
-        
+        secondTableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
+            view.addSubview(secondTableView)
+            secondTableView.translatesAutoresizingMaskIntoConstraints = false
+            secondTableView.register(SecondMenuCell.self, forCellReuseIdentifier: "SecondMenuCell")
+            secondTableView.register(SecondTitleCell.self, forCellReuseIdentifier: "SecondTitleCell")
+            secondTableView.register(SecondDayCell.self, forCellReuseIdentifier: "SecondDayCell")
+            secondTableView.register(SecondtermCell.self, forCellReuseIdentifier: "SecondtermCell")
+            secondTableView.register(SecondEverydayCell.self, forCellReuseIdentifier: "SecondEverydayCell")
+            secondTableView.register(SecondSetCell.self, forCellReuseIdentifier: "SecondSetCell")
+            secondTableView.register(SecondAlarmCell.self, forCellReuseIdentifier: "SecondAlarmCell")
+            secondTableView.register(SecondCharacterCell.self, forCellReuseIdentifier: "SecondCharacterCell")
+            
+            secondTableView.rowHeight = 100
+            secondTableView.delegate = self
+            secondTableView.dataSource = self
+            secondTableView.allowsMultipleSelection = true
+        }
     }
     
     func loadData() {
