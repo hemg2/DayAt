@@ -24,11 +24,11 @@ class SecondSetCell: UITableViewCell {
         swicth.isOn = true
         //        swicth.translatesAutoresizingMaskIntoConstraints = false
 //        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
-        swicth.addTarget(SecondSetCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        swicth.addTarget(self, action: #selector(onClickSwitch2(sender:)), for: .valueChanged)
         return swicth
     }()
     
-    @objc func onClickSwitch(sender: UISwitch) {
+    @objc func onClickSwitch2(sender: UISwitch) {
         var color: UIColor
         print("콕콕콕")
         if sender.isOn {

@@ -52,9 +52,9 @@ class SecondDayCell: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(titleLabel)
-        addSubview(dayLabel)
-        addSubview(datePicker)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(dayLabel)
+        contentView.addSubview(datePicker)
         configure()
     }
     
@@ -83,6 +83,5 @@ extension SecondDayCell {
     public func threeBind(model: ThreeTitle) {
         titleLabel.text = model.title
         dayLabel.text = model.subTitle
-//        datePicker.addTarget(self, action: #selector(onDidChangeDate(sender:)), for: .valueChanged)
     }
 }

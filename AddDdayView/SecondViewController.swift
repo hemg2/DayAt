@@ -9,10 +9,7 @@ import UIKit
 import SnapKit
 
 
-class SecondViewController: UIViewController, SecondtermCellDelegate {
-    func cellSwicth() {
-        print("클릭")
-    }
+class SecondViewController: UIViewController {
     
     private lazy var secondTableView: UITableView = {
         let tableView = UITableView()
@@ -125,8 +122,6 @@ extension SecondViewController: UITableViewDataSource {
         } else if indexPath.section == 3 {
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "SecondtermCell", for: indexPath) as! SecondtermCell
             cell3.foredBind(model: dataSource4[indexPath.row])
-            cell3.deleegate = self
-            //            cell3.controlSwicth = UISwitch()
             return cell3
         } else if indexPath.section == 4 {
             let cell4 = tableView.dequeueReusableCell(withIdentifier: "SecondEverydayCell", for: indexPath) as! SecondEverydayCell
