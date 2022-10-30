@@ -37,6 +37,7 @@
 		63BEC0C3290E66C1006487BC /* FacebookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C2290E66C1006487BC /* FacebookTableViewCell.swift */; };
 		63BEC0C5290E66CE006487BC /* InstagramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C4290E66CE006487BC /* InstagramTableViewCell.swift */; };
 		63BEC0C7290E66E1006487BC /* TranslationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C6290E66E1006487BC /* TranslationTableViewCell.swift */; };
+		63BEC0C9290EB888006487BC /* DataBackUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C8290EB888006487BC /* DataBackUpTableViewCell.swift */; };
 		8BEDF6F67DD2536FE37334DC /* Pods_DayAt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D25EF7D925AD25151370561 /* Pods_DayAt.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		63BEC0C2290E66C1006487BC /* FacebookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookTableViewCell.swift; sourceTree = "<group>"; };
 		63BEC0C4290E66CE006487BC /* InstagramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTableViewCell.swift; sourceTree = "<group>"; };
 		63BEC0C6290E66E1006487BC /* TranslationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0C8290EB888006487BC /* DataBackUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBackUpTableViewCell.swift; sourceTree = "<group>"; };
 		A1A6C1D8DBD6EA670726AC8B /* Pods-DayAt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayAt.debug.xcconfig"; path = "Target Support Files/Pods-DayAt/Pods-DayAt.debug.xcconfig"; sourceTree = "<group>"; };
 		AA21BD9332694E9275BC6242 /* Pods-DayAt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayAt.release.xcconfig"; path = "Target Support Files/Pods-DayAt/Pods-DayAt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 			children = (
 				63BEC0B2290E4487006487BC /* TestRedViewController.swift */,
 				63BEC0B8290E4910006487BC /* SetTableViewCell.swift */,
+				63BEC0C8290EB888006487BC /* DataBackUpTableViewCell.swift */,
 			);
 			path = SetView;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				63BEC0A4290BBF27006487BC /* SecondCharacterCell.swift in Sources */,
 				63BEC0BD290E4948006487BC /* SupportTableViewCell.swift in Sources */,
 				63BEC0AC290CD700006487BC /* ThreeBuyCell.swift in Sources */,
+				63BEC0C9290EB888006487BC /* DataBackUpTableViewCell.swift in Sources */,
 				63BEC093290A1EEC006487BC /* Model.swift in Sources */,
 				63BEC0A7290C1A07006487BC /* ThreeViewController.swift in Sources */,
 				63BEC0C7290E66E1006487BC /* TranslationTableViewCell.swift in Sources */,

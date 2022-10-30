@@ -40,7 +40,6 @@ class TestGrayViewController: UIViewController {
             tableView.register(FacebookTableViewCell.self, forCellReuseIdentifier: "cell2")
             tableView.register(InstagramTableViewCell.self, forCellReuseIdentifier: "cell3")
             tableView.register(TranslationTableViewCell.self, forCellReuseIdentifier: "cell4")
-            tableView.rowHeight = 100
             tableView.delegate = self
             tableView.dataSource = self
         }

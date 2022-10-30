@@ -65,7 +65,7 @@ class ThreeViewController: UIViewController {
     
 }
 
-extension ThreeViewController: UITableViewDataSource, UITableViewDelegate {
+extension ThreeViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return dataSource.count
@@ -126,4 +126,8 @@ extension ThreeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     
+}
+
+
+extension ThreeViewController: UITableViewDelegate {
 }

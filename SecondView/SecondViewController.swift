@@ -165,16 +165,19 @@ extension SecondViewController: UITableViewDataSource {
       
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        switch section {
-//        case 0: return "시간, 커스텀, 더보기"
-//        case 1: return "2"
-//        case 2: return "3"
-//        case 3: return "4"
-//        case 4: return "5"
-//        default: return nil
-//        }
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return ""
+        case 1: return "제목란"
+//        case 2: return "날짜란"
+//        case 3: return "기간란"
+//        case 4: return "반복란"
+//        case 5: return "설정란"
+//        case 6: return "알림란"
+//        case 7: return "선택란"
+        default: return nil
+        }
+    }
     
 }
 

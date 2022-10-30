@@ -64,6 +64,12 @@ class SetTableViewCell: UITableViewCell {
         label.textColor = UIColor.black
         return label
     }()
+    var lastLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.textColor = UIColor.gray
+        return label
+    }()
     
     var buyButton: UIButton = {
         let button = UIButton()
@@ -146,9 +152,14 @@ class SetTableViewCell: UITableViewCell {
             addSubview(buyButton)
         }
         buyBackButton.snp.makeConstraints { make in
-            make.top.equalTo(163)
+            make.top.equalTo(168)
             make.leading.equalTo(center)
             addSubview(buyBackButton)
+        }
+        lastLabel.snp.makeConstraints {
+            $0.top.equalTo(230)
+            $0.leading.equalTo(20)
+            addSubview(lastLabel)
         }
     }
     
