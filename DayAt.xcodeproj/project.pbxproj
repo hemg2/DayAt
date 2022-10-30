@@ -28,6 +28,15 @@
 		63BEC0AC290CD700006487BC /* ThreeBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0AB290CD700006487BC /* ThreeBuyCell.swift */; };
 		63BEC0AE290CD722006487BC /* ThreeSupportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0AD290CD722006487BC /* ThreeSupportCell.swift */; };
 		63BEC0B0290CD73B006487BC /* ThreesUseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0AF290CD73B006487BC /* ThreesUseCell.swift */; };
+		63BEC0B3290E4487006487BC /* TestRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0B2290E4487006487BC /* TestRedViewController.swift */; };
+		63BEC0B5290E44C2006487BC /* TestGrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0B4290E44C2006487BC /* TestGrayViewController.swift */; };
+		63BEC0B7290E467B006487BC /* TestBlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0B6290E467B006487BC /* TestBlackViewController.swift */; };
+		63BEC0B9290E4910006487BC /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0B8290E4910006487BC /* SetTableViewCell.swift */; };
+		63BEC0BD290E4948006487BC /* SupportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0BC290E4948006487BC /* SupportTableViewCell.swift */; };
+		63BEC0C1290E66AC006487BC /* OpinionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C0290E66AC006487BC /* OpinionTableViewCell.swift */; };
+		63BEC0C3290E66C1006487BC /* FacebookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C2290E66C1006487BC /* FacebookTableViewCell.swift */; };
+		63BEC0C5290E66CE006487BC /* InstagramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C4290E66CE006487BC /* InstagramTableViewCell.swift */; };
+		63BEC0C7290E66E1006487BC /* TranslationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC0C6290E66E1006487BC /* TranslationTableViewCell.swift */; };
 		8BEDF6F67DD2536FE37334DC /* Pods_DayAt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D25EF7D925AD25151370561 /* Pods_DayAt.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +65,15 @@
 		63BEC0AB290CD700006487BC /* ThreeBuyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeBuyCell.swift; sourceTree = "<group>"; };
 		63BEC0AD290CD722006487BC /* ThreeSupportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSupportCell.swift; sourceTree = "<group>"; };
 		63BEC0AF290CD73B006487BC /* ThreesUseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreesUseCell.swift; sourceTree = "<group>"; };
+		63BEC0B2290E4487006487BC /* TestRedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRedViewController.swift; sourceTree = "<group>"; };
+		63BEC0B4290E44C2006487BC /* TestGrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGrayViewController.swift; sourceTree = "<group>"; };
+		63BEC0B6290E467B006487BC /* TestBlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBlackViewController.swift; sourceTree = "<group>"; };
+		63BEC0B8290E4910006487BC /* SetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0BC290E4948006487BC /* SupportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0C0290E66AC006487BC /* OpinionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpinionTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0C2290E66C1006487BC /* FacebookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0C4290E66CE006487BC /* InstagramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTableViewCell.swift; sourceTree = "<group>"; };
+		63BEC0C6290E66E1006487BC /* TranslationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationTableViewCell.swift; sourceTree = "<group>"; };
 		A1A6C1D8DBD6EA670726AC8B /* Pods-DayAt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayAt.debug.xcconfig"; path = "Target Support Files/Pods-DayAt/Pods-DayAt.debug.xcconfig"; sourceTree = "<group>"; };
 		AA21BD9332694E9275BC6242 /* Pods-DayAt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayAt.release.xcconfig"; path = "Target Support Files/Pods-DayAt/Pods-DayAt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +101,7 @@
 		63BEC069290A0B02006487BC = {
 			isa = PBXGroup;
 			children = (
+				63BEC0B1290E445B006487BC /* TestView */,
 				63BEC091290A1EE2006487BC /* Model */,
 				63BEC089290A0E0C006487BC /* FistView */,
 				63BEC08E290A0FA6006487BC /* SecondView */,
@@ -171,6 +190,46 @@
 				63BEC0AD290CD722006487BC /* ThreeSupportCell.swift */,
 				63BEC0AB290CD700006487BC /* ThreeBuyCell.swift */,
 				63BEC0AF290CD73B006487BC /* ThreesUseCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		63BEC0B1290E445B006487BC /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				63BEC0BA290E4915006487BC /* SetView */,
+				63BEC0BB290E4930006487BC /* Support */,
+				63BEC0B6290E467B006487BC /* TestBlackViewController.swift */,
+			);
+			path = TestView;
+			sourceTree = "<group>";
+		};
+		63BEC0BA290E4915006487BC /* SetView */ = {
+			isa = PBXGroup;
+			children = (
+				63BEC0B2290E4487006487BC /* TestRedViewController.swift */,
+				63BEC0B8290E4910006487BC /* SetTableViewCell.swift */,
+			);
+			path = SetView;
+			sourceTree = "<group>";
+		};
+		63BEC0BB290E4930006487BC /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				63BEC0B4290E44C2006487BC /* TestGrayViewController.swift */,
+				63BEC0BF290E667C006487BC /* Cell */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		63BEC0BF290E667C006487BC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				63BEC0BC290E4948006487BC /* SupportTableViewCell.swift */,
+				63BEC0C0290E66AC006487BC /* OpinionTableViewCell.swift */,
+				63BEC0C2290E66C1006487BC /* FacebookTableViewCell.swift */,
+				63BEC0C4290E66CE006487BC /* InstagramTableViewCell.swift */,
+				63BEC0C6290E66E1006487BC /* TranslationTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -298,19 +357,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BEC0B9290E4910006487BC /* SetTableViewCell.swift in Sources */,
+				63BEC0B3290E4487006487BC /* TestRedViewController.swift in Sources */,
 				63BEC09E290BBE9E006487BC /* SecondEverydayCell.swift in Sources */,
 				63BEC097290A6F35006487BC /* SecondTitleCell.swift in Sources */,
+				63BEC0B5290E44C2006487BC /* TestGrayViewController.swift in Sources */,
+				63BEC0C3290E66C1006487BC /* FacebookTableViewCell.swift in Sources */,
 				63BEC08B290A0E41006487BC /* FirstViewController.swift in Sources */,
 				63BEC0AE290CD722006487BC /* ThreeSupportCell.swift in Sources */,
+				63BEC0C5290E66CE006487BC /* InstagramTableViewCell.swift in Sources */,
 				63BEC099290A6F59006487BC /* SecondDayCell.swift in Sources */,
 				63BEC076290A0B02006487BC /* AppDelegate.swift in Sources */,
+				63BEC0B7290E467B006487BC /* TestBlackViewController.swift in Sources */,
 				63BEC08D290A0E89006487BC /* FirstTableViewCell.swift in Sources */,
 				63BEC09C290BBE87006487BC /* SecondtermCell.swift in Sources */,
 				63BEC0A4290BBF27006487BC /* SecondCharacterCell.swift in Sources */,
+				63BEC0BD290E4948006487BC /* SupportTableViewCell.swift in Sources */,
 				63BEC0AC290CD700006487BC /* ThreeBuyCell.swift in Sources */,
 				63BEC093290A1EEC006487BC /* Model.swift in Sources */,
 				63BEC0A7290C1A07006487BC /* ThreeViewController.swift in Sources */,
+				63BEC0C7290E66E1006487BC /* TranslationTableViewCell.swift in Sources */,
 				63BEC090290A0FBD006487BC /* SecondViewController.swift in Sources */,
+				63BEC0C1290E66AC006487BC /* OpinionTableViewCell.swift in Sources */,
 				63BEC0A2290BBF11006487BC /* SecondAlarmCell.swift in Sources */,
 				63BEC095290A6A22006487BC /* SecondMenuCell.swift in Sources */,
 				63BEC0B0290CD73B006487BC /* ThreesUseCell.swift in Sources */,

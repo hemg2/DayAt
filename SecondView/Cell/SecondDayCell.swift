@@ -17,6 +17,12 @@ class SecondDayCell: UITableViewCell {
         label.textColor = UIColor.darkGray
         return label
     }()
+    var dayLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor.darkGray
+        return label
+    }()
     
     lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -47,6 +53,7 @@ class SecondDayCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
+        addSubview(dayLabel)
         addSubview(datePicker)
         configure()
     }
@@ -60,9 +67,13 @@ class SecondDayCell: UITableViewCell {
             make.top.equalTo(10)
             make.leading.equalTo(10)
         }
+        dayLabel.snp.makeConstraints { make in
+            make.top.equalTo(10)
+            make.trailing.equalTo(-15)
+        }
         datePicker.snp.makeConstraints { make in
             make.top.equalTo(42.5)
-            make.leading.equalTo(10)
+            make.leading.equalTo(15)
         }
     }
 }
@@ -71,5 +82,7 @@ class SecondDayCell: UITableViewCell {
 extension SecondDayCell {
     public func threeBind(model: ThreeTitle) {
         titleLabel.text = model.title
+        dayLabel.text = model.subTitle
+//        datePicker.addTarget(self, action: #selector(onDidChangeDate(sender:)), for: .valueChanged)
     }
 }

@@ -25,6 +25,7 @@ struct SecondTitle {
 
 struct ThreeTitle {
     let title: String
+    let subTitle: String
 }
 
 struct ForeTitle {
@@ -55,12 +56,16 @@ struct ThreeViewTitle {
 //    let use: String
 }
 
-//struct Model {
-//    let first: String
-//    let second: String
-//    let three: String
-//}
-//
+struct Support {
+    let first: String
+    let second: String
+    let three: String
+    let fore: String
+    let five: String
+}
+
+
+
 //struct SetModel {
 //    let title: String
 //    let models: [Model]

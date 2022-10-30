@@ -8,7 +8,12 @@
 import UIKit
 import SnapKit
 
-class SecondViewController: UIViewController {
+
+class SecondViewController: UIViewController, SecondtermCellDelegate {
+    func cellSwicth() {
+        print("클릭")
+    }
+    
    
     
     private lazy var secondTableView: UITableView = {
@@ -72,7 +77,7 @@ class SecondViewController: UIViewController {
     func loadData() {
         dataSource.append(.init(title: "시간, 커스텀, 더보기"))
         dataSource2.append(.init(title: "제목을 입력해주세요"))
-        dataSource3.append(.init(title: "날짜선택"))
+        dataSource3.append(.init(title: "날짜선택", subTitle: "기본달력"))
         dataSource4.append(.init(title: "기간으로설정"))
         dataSource5.append(.init(title: "매일 반복"))
         dataSource6.append(.init(title: "위젯 설정"))
@@ -80,12 +85,11 @@ class SecondViewController: UIViewController {
         dataSource8.append(.init(title: "캐릭터 선택"))
      
     }
-    
-    
+
 }
 
 
-extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
+extension SecondViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return dataSource.count
@@ -105,12 +109,11 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
             return dataSource8.count
         }
         return 0
-//        return testModels[section].models.count
-//        return cell.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
+        
         if  indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SecondMenuCell", for: indexPath) as! SecondMenuCell
             cell.bind(model: dataSource[indexPath.row])
@@ -126,7 +129,8 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 3 {
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "SecondtermCell", for: indexPath) as! SecondtermCell
             cell3.foredBind(model: dataSource4[indexPath.row])
-//            cell3.controlSwicth = UISwitch()
+            cell3.deleegate = self
+            //            cell3.controlSwicth = UISwitch()
             return cell3
         } else if indexPath.section == 4 {
             let cell4 = tableView.dequeueReusableCell(withIdentifier: "SecondEverydayCell", for: indexPath) as! SecondEverydayCell
@@ -162,6 +166,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+      
     }
     
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -175,4 +180,8 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
 //        }
 //    }
     
+}
+
+extension SecondViewController: UITableViewDelegate {
+  
 }

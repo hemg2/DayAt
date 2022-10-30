@@ -33,7 +33,7 @@ class FirstViewController: UIViewController {
     @objc func left(_ sender: Any) {
         let threeView = ThreeViewController()
 //        threeView.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(threeView, animated: true)
+        self.navigationController?.pushViewController(threeView, animated: true)
     }
     
     override func viewDidLoad() {
@@ -67,6 +67,7 @@ class FirstViewController: UIViewController {
         dataSource.append(.init(leftTitle: "제목1", leftdey: "1월~12월1", rightdate: "01%"))
         dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "02%"))
         dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "03%"))
+        
     }
     
   

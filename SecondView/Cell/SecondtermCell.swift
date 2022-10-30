@@ -8,8 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol SecondtermCellDelegate {
+    func cellSwicth()
+}
+
 class SecondtermCell: UITableViewCell {
     static let identifier = "SecondtermCell"
+    
+    var deleegate: SecondtermCellDelegate?
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -23,13 +29,14 @@ class SecondtermCell: UITableViewCell {
         //        swicth.setOn(true, animated: true)
         swicth.isOn = true
         //        swicth.translatesAutoresizingMaskIntoConstraints = false
-        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+//        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         swicth.addTarget(SecondtermCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
-        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
+//        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
         return swicth
     }()
     
     @objc func onClickSwitch(sender: UISwitch) {
+        deleegate?.cellSwicth()
         var color: UIColor
         print("콕콕콕")
         if sender.isOn {
@@ -57,6 +64,7 @@ class SecondtermCell: UITableViewCell {
         addSubview(titleLabel)
         addSubview(controlSwicth)
         configure()
+        self.controlSwicth.addTarget(SecondtermCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -80,6 +88,6 @@ class SecondtermCell: UITableViewCell {
 extension SecondtermCell {
     public func foredBind(model: ForeTitle) {
         titleLabel.text = model.title
-       
+//        controlSwicth.addTarget(self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
     }
 }

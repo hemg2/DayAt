@@ -113,6 +113,16 @@ extension ThreeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            let redView = TestRedViewController()
+            self.navigationController?.pushViewController(redView, animated: true)
+        } else if indexPath.section == 1 {
+            let grayView = TestGrayViewController()
+            self.navigationController?.pushViewController(grayView, animated: true)
+        } else if indexPath.section == 2 {
+            let baclView = TestBlackViewController()
+            self.navigationController?.pushViewController(baclView, animated: true)
+        }
     }
 
     

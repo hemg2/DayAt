@@ -23,7 +23,7 @@ class SecondSetCell: UITableViewCell {
         //        swicth.setOn(true, animated: true)
         swicth.isOn = true
         //        swicth.translatesAutoresizingMaskIntoConstraints = false
-        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+//        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         swicth.addTarget(SecondSetCell.self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
         return swicth
     }()
