@@ -43,7 +43,7 @@ class SecondMenuCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(10)
+            make.top.equalTo(5)
             make.leading.equalTo(10)
         }
     }

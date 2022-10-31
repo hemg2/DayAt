@@ -64,16 +64,16 @@ class SecondDayCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(10)
+            make.top.equalTo(5)
             make.leading.equalTo(10)
         }
         dayLabel.snp.makeConstraints { make in
-            make.top.equalTo(10)
+            make.top.equalTo(5)
             make.trailing.equalTo(-15)
         }
         datePicker.snp.makeConstraints { make in
-            make.top.equalTo(42.5)
-            make.leading.equalTo(15)
+            make.top.equalTo(5)
+            make.leading.equalTo(110)
         }
     }
 }

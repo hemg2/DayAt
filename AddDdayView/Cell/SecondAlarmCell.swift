@@ -48,12 +48,12 @@ class SecondAlarmCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(30)
+            make.top.equalTo(5)
             make.leading.equalTo(15)
         }
         titleLabel1.snp.makeConstraints { make in
-            make.top.equalTo(30)
-            make.trailing.equalTo(-40)
+            make.top.equalTo(12)
+            make.trailing.equalTo(-10)
         }
     }
 }

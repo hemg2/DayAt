@@ -14,6 +14,15 @@ class FirstViewController: UIViewController {
         view.addSubview(tableView)
         return tableView
     }()
+    //실시간 날짜
+    let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .long
+        f.timeStyle = .short
+        f.locale = Locale(identifier: "ko_kr")
+        f.dateFormat = "yyyy/MM/dd HH:mm"
+        return f
+    }()
     
     var dataSource = [CustomCellModel]()
     
@@ -45,28 +54,32 @@ class FirstViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = leftNavButton
         
         tableViewLayout()
-        loadData()
+//        loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     
     func tableViewLayout() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
-            view.addSubview(tableView)
             tableView.translatesAutoresizingMaskIntoConstraints = false
             tableView.register(FirstTableViewCell.self, forCellReuseIdentifier: "cell")
+//            tableView.rowHeight = UITableView.automaticDimension
             tableView.rowHeight = 100
             tableView.delegate = self
             tableView.dataSource = self
         }
     }
     
-    func loadData() {
-        dataSource.append(.init(leftTitle: "제목1", leftdey: "1월~12월1", rightdate: "01%"))
-        dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "02%"))
-        dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "03%"))
-        
-    }
+//    func loadData() {
+//        dataSource.append(.init(leftTitle: "제목1", leftdey: "1월~12월1", rightdate: "01%"))
+//        dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "02%"))
+//        dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "03%"))
+//        
+//    }
     
   
     
@@ -74,27 +87,32 @@ class FirstViewController: UIViewController {
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FirstTableViewCell
-        cell.bind(model: dataSource[indexPath.row])
+//        cell.bind(model: dataSource[indexPath.row])
+        cell.dateLabel.text = formatter.string(from: Date())
+        cell.titleLabel.text = "제목"
+        cell.dayLabel.text = "%"
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         //스와이프구현
         let actions1 = UIContextualAction(style: .normal, title: "Delete", handler: { action, view, completionHaldler in
             completionHaldler(true)  //셀 지우기
-            let cell = self.dataSource.remove(at: indexPath.row)
+//            let cell = self.dataSource.remove(at: indexPath.row)
+            let cell = UserDefaults.standard.removeObject(forKey: "key")
             tableView.reloadData()
         })
         actions1.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [actions1])
     }
+    
 }

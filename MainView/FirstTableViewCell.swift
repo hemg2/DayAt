@@ -60,10 +60,10 @@ class FirstTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(dateLabel)
-        addSubview(titleLabel)
-        addSubview(dayLabel)
-        addSubview(slider)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(dayLabel)
+        contentView.addSubview(slider)
         configure()
     }
     
@@ -91,14 +91,14 @@ class FirstTableViewCell: UITableViewCell {
 }
 
 
-extension FirstTableViewCell {
-    public func bind(model: CustomCellModel) {
-        titleLabel.text = model.leftTitle
-        dateLabel.text = model.leftdey
-        dayLabel.text = model.rightdate
-        
-    }
-}
+//extension FirstTableViewCell {
+//    public func bind(model: CustomCellModel) {
+//        titleLabel.text = model.leftTitle
+//        dateLabel.text = model.leftdey
+//        dayLabel.text = model.rightdate
+//
+//    }
+//}
 
 
 // 디데이 계산법 디데이 - 투데이 = 벨류값을 저장한다

@@ -41,7 +41,7 @@ class SecondCharacterCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(30)
+            make.top.equalTo(5)
             make.leading.equalTo(15)
         }
     }

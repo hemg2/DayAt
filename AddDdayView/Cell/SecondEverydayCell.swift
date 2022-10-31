@@ -17,13 +17,14 @@ class SecondEverydayCell: UITableViewCell {
         return label
     }()
     
-    var controlSwicth: UISwitch = {
+    private lazy var controlSwicth: UISwitch = {
         let swicth = UISwitch()
         swicth.setOn(true, animated: true)
         swicth.isOn = true
         swicth.translatesAutoresizingMaskIntoConstraints = false
         swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         swicth.addTarget(self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
         return swicth
     }()
     
@@ -33,7 +34,7 @@ class SecondEverydayCell: UITableViewCell {
             color = UIColor.gray
             print("on")
         } else {
-            color = UIColor.orange
+            color = UIColor.black
             print("off")
         }
         self.backgroundColor = color
@@ -62,11 +63,11 @@ class SecondEverydayCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(30)
+            make.top.equalTo(5)
             make.leading.equalTo(15)
         }
         controlSwicth.snp.makeConstraints { make in
-            make.top.equalTo(30)
+            make.top.equalTo(5)
             make.trailing.equalTo(-15)
         }
     }

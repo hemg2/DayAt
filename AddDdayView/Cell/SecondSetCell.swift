@@ -20,37 +20,38 @@ class SecondSetCell: UITableViewCell {
     
     private lazy var controlSwicth: UISwitch = {
         let swicth = UISwitch()
-        //        swicth.setOn(true, animated: true)
+        swicth.setOn(true, animated: true)
         swicth.isOn = true
-        //        swicth.translatesAutoresizingMaskIntoConstraints = false
-//        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        swicth.translatesAutoresizingMaskIntoConstraints = false
+        swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         swicth.addTarget(self, action: #selector(onClickSwitch2(sender:)), for: .valueChanged)
+        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch2")
         return swicth
     }()
     
     @objc func onClickSwitch2(sender: UISwitch) {
-        var color: UIColor
-        print("콕콕콕")
+//        var color: UIColor
+//        print("콕콕콕")
         if sender.isOn {
-            color = UIColor.gray
+//            color = UIColor.gray
             print("on")
         } else {
-            color = UIColor.orange
+//            color = UIColor.orange
             print("off")
         }
-        self.backgroundColor = color
+//        self.backgroundColor = color
     }
-
+    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -66,13 +67,13 @@ class SecondSetCell: UITableViewCell {
     
     func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(30)
+            make.top.equalTo(5)
             make.leading.equalTo(15)
         }
         controlSwicth.snp.makeConstraints { make in
-                   make.top.equalTo(30)
-                   make.trailing.equalTo(-15)
-               }
+            make.top.equalTo(5)
+            make.trailing.equalTo(-15)
+        }
     }
 }
 

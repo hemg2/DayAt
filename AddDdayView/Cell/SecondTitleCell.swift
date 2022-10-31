@@ -50,7 +50,7 @@ class SecondTitleCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 //        addSubview(titleLabel)
-        addSubview(textfield)
+        contentView.addSubview(textfield)
         configure()
     }
     
@@ -64,8 +64,8 @@ class SecondTitleCell: UITableViewCell {
 //            make.leading.equalTo(10)
 //        }
         textfield.snp.makeConstraints { make in
-            make.top.equalTo(25)
-            make.leading.equalTo(10)
+            make.top.equalTo(5)
+            make.leading.equalTo(5)
         }
     }
 }

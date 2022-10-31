@@ -104,10 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				63BEC091290A1EE2006487BC /* Model */,
-				63BEC0B1290E445B006487BC /* SetView */,
 				63BEC089290A0E0C006487BC /* MainView */,
 				63BEC08E290A0FA6006487BC /* AddDdayView */,
-				63BEC0A5290C19E4006487BC /* Three */,
+				63BEC0B1290E445B006487BC /* SetView */,
+				63BEC0A5290C19E4006487BC /* ManuView */,
 				63BEC074290A0B02006487BC /* DayAt */,
 				63BEC073290A0B02006487BC /* Products */,
 				819F48578A97B9F2E28D83AD /* Pods */,
@@ -176,13 +176,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		63BEC0A5290C19E4006487BC /* Three */ = {
+		63BEC0A5290C19E4006487BC /* ManuView */ = {
 			isa = PBXGroup;
 			children = (
 				63BEC0A6290C1A07006487BC /* ThreeViewController.swift */,
 				63BEC0A8290C1DCB006487BC /* Cell */,
 			);
-			path = Three;
+			path = ManuView;
 			sourceTree = "<group>";
 		};
 		63BEC0A8290C1DCB006487BC /* Cell */ = {

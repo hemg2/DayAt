@@ -42,14 +42,17 @@ class SecondViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "NEW"
         self.navigationItem.rightBarButtonItem = self.rightNavButton
+        
         tableViewLayout()
         loadData()
+       
     }
+   
     
     func tableViewLayout() {
         secondTableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
-            view.addSubview(secondTableView)
+//            view.addSubview(secondTableView)
             secondTableView.translatesAutoresizingMaskIntoConstraints = false
             secondTableView.register(SecondMenuCell.self, forCellReuseIdentifier: "SecondMenuCell")
             secondTableView.register(SecondTitleCell.self, forCellReuseIdentifier: "SecondTitleCell")
@@ -59,16 +62,18 @@ class SecondViewController: UIViewController {
             secondTableView.register(SecondSetCell.self, forCellReuseIdentifier: "SecondSetCell")
             secondTableView.register(SecondAlarmCell.self, forCellReuseIdentifier: "SecondAlarmCell")
             secondTableView.register(SecondCharacterCell.self, forCellReuseIdentifier: "SecondCharacterCell")
-            
-            secondTableView.rowHeight = 100
+            secondTableView.rowHeight = UITableView.automaticDimension
+//            UIView.setAnimationsEnabled(true)
+//            secondTableView.rowHeight = UITableView.automaticDimension
+            secondTableView.estimatedRowHeight = 130
             secondTableView.delegate = self
             secondTableView.dataSource = self
-            secondTableView.allowsMultipleSelection = true
+//            secondTableView.allowsMultipleSelection = true
         }
     }
     
     func loadData() {
-        dataSource.append(.init(title: "시간, 커스텀, 더보기"))
+        dataSource.append(.init(title: "시간"))
         dataSource2.append(.init(title: "제목을 입력해주세요"))
         dataSource3.append(.init(title: "날짜선택", subTitle: "기본달력"))
         dataSource4.append(.init(title: "기간으로설정"))
@@ -146,10 +151,14 @@ extension SecondViewController: UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80  // 셀높이
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70//secondTableView.rowHeight  // 셀높이
+    }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 10//testModels.count// 걍 숫자로 표현 셀 갯수
@@ -163,7 +172,7 @@ extension SecondViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0: return ""
-        case 1: return "제목란"
+//        case 1: return ""
 //        case 2: return "날짜란"
 //        case 3: return "기간란"
 //        case 4: return "반복란"
@@ -174,8 +183,14 @@ extension SecondViewController: UITableViewDataSource {
         }
     }
     
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        return UITableView.automaticDimension
+
+//    }
+    
 }
 
 extension SecondViewController: UITableViewDelegate {
-  
+    
 }
