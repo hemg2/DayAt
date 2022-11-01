@@ -44,7 +44,7 @@ class SecondMenuCell: UITableViewCell {
     func configure() {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
-            make.leading.equalTo(10)
+            make.leading.equalTo(center)
         }
     }
 }

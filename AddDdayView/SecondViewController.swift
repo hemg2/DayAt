@@ -11,6 +11,11 @@ import SnapKit
 
 class SecondViewController: UIViewController {
     
+    let ud = UserDefaults.standard
+    let a = FirstTableViewCell()
+    let aa = SecondTitleCell()
+    let datepicker = SecondDayCell()
+    
     private lazy var secondTableView: UITableView = {
         let tableView = UITableView()
         view.addSubview(tableView)
@@ -23,6 +28,11 @@ class SecondViewController: UIViewController {
     }
     
     @objc func add(_ sender: Any) {
+//        ud.set(aa.textfield.text, forKey: "title") //값저장
+        ud.set(aa.self.textfield.text, forKey: "title")
+        ud.set(datepicker.self.datePicker.date, forKey: "day")
+        ud.set("- 서울!", forKey: "title2")
+//        print("add\(ud.set(aa.textfield.text, forKey: "title"))")
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -42,7 +52,7 @@ class SecondViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "NEW"
         self.navigationItem.rightBarButtonItem = self.rightNavButton
-        
+        ud.set(aa.textfield.text, forKey: "title")
         tableViewLayout()
         loadData()
        
@@ -65,7 +75,7 @@ class SecondViewController: UIViewController {
             secondTableView.rowHeight = UITableView.automaticDimension
 //            UIView.setAnimationsEnabled(true)
 //            secondTableView.rowHeight = UITableView.automaticDimension
-            secondTableView.estimatedRowHeight = 130
+//            secondTableView.estimatedRowHeight = 130
             secondTableView.delegate = self
             secondTableView.dataSource = self
 //            secondTableView.allowsMultipleSelection = true
@@ -116,17 +126,24 @@ extension SecondViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SecondMenuCell", for: indexPath) as! SecondMenuCell
             cell.bind(model: dataSource[indexPath.row])
             return cell
+            
         } else if indexPath.section == 1 {
+            
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "SecondTitleCell", for: indexPath) as! SecondTitleCell
-            cell1.secondBind(model: dataSource2	[indexPath.row])
+//            cell1.secondBind(model: dataSource2[indexPath.row])
+            cell1.textfield.text = ""
+            ud.set(cell1.textfield.text, forKey: "title")
+            print("cell \(ud.set(cell1.textfield.text, forKey: "title"))")
+//            cell1.textfield.text = ud.set(aa.textfield.text, forKey: "title")
             return cell1
+            
         } else if indexPath.section == 2 {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "SecondDayCell", for: indexPath) as! SecondDayCell
             cell2.threeBind(model: dataSource3[indexPath.row])
             return cell2
         } else if indexPath.section == 3 {
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "SecondtermCell", for: indexPath) as! SecondtermCell
-            cell3.foredBind(model: dataSource4[indexPath.row])
+            cell3.fourBind(model: dataSource4[indexPath.row])
             return cell3
         } else if indexPath.section == 4 {
             let cell4 = tableView.dequeueReusableCell(withIdentifier: "SecondEverydayCell", for: indexPath) as! SecondEverydayCell
@@ -156,7 +173,7 @@ extension SecondViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70//secondTableView.rowHeight  // 셀높이
+        return secondTableView.rowHeight  // 셀높이
     }
 
     

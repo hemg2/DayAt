@@ -20,7 +20,7 @@ class FirstViewController: UIViewController {
         f.dateStyle = .long
         f.timeStyle = .short
         f.locale = Locale(identifier: "ko_kr")
-        f.dateFormat = "yyyy/MM/dd HH:mm"
+        f.dateFormat = "yyyy/MM/dd - " //HH:mm:ss
         return f
     }()
     
@@ -93,8 +93,16 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FirstTableViewCell
 //        cell.bind(model: dataSource[indexPath.row])
-        cell.dateLabel.text = formatter.string(from: Date())
-        cell.titleLabel.text = "제목"
+        cell.dateLabel.text = "\(formatter.string(from: Date()))" + "\(cell.dateLabel.text = UserDefaults.standard.string(forKey: "day"))"
+        
+//        if let a = UserDefaults.standard.string(forKey: "title") {
+//            cell.titleLabel.text = a
+//        }
+        cell.titleLabel.text = UserDefaults.standard.string(forKey: "title")!
+        + UserDefaults.standard.string(forKey: "title2")!// 값불러오기
+        print("뷰컨1번확인\(cell.titleLabel.text)")
+        
+        
         cell.dayLabel.text = "%"
         return cell
     }
@@ -108,7 +116,7 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
         let actions1 = UIContextualAction(style: .normal, title: "Delete", handler: { action, view, completionHaldler in
             completionHaldler(true)  //셀 지우기
 //            let cell = self.dataSource.remove(at: indexPath.row)
-            let cell = UserDefaults.standard.removeObject(forKey: "key")
+            let cell = UserDefaults.standard.removeObject(forKey: "title")
             tableView.reloadData()
         })
         actions1.backgroundColor = .systemRed

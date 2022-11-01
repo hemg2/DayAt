@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SecondTitleCell: UITableViewCell {
+class SecondTitleCell: UITableViewCell, UITextFieldDelegate {
     static let identifier = "SecondTitleCell"
     
     var titleLabel: UILabel = {
@@ -22,7 +22,6 @@ class SecondTitleCell: UITableViewCell {
        let textfield = UITextField()
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.placeholder = "제목을 입력해주세요"
-//        textfield.text = "제목 만들어주세요"
         textfield.font = UIFont.systemFont(ofSize: 30)
         textfield.textColor = UIColor.gray
         textfield.layer.cornerRadius = 1
@@ -49,9 +48,9 @@ class SecondTitleCell: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        addSubview(titleLabel)
         contentView.addSubview(textfield)
         configure()
+        textfield.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -59,21 +58,9 @@ class SecondTitleCell: UITableViewCell {
     }
     
     func configure() {
-//        titleLabel.snp.makeConstraints { make in
-//            make.top.equalTo(10)
-//            make.leading.equalTo(10)
-//        }
         textfield.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(5)
         }
-    }
-}
-
-
-extension SecondTitleCell {
-    public func secondBind(model: SecondTitle) {
-//        titleLabel.text = model.title
-        textfield.text = model.title
     }
 }

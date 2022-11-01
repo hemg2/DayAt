@@ -81,7 +81,7 @@ class SecondtermCell: UITableViewCell {
 
 
 extension SecondtermCell {
-    public func foredBind(model: ForeTitle) {
+    public func fourBind(model: ForeTitle) {
         titleLabel.text = model.title
     }
 }
