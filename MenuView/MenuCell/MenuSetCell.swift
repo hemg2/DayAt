@@ -1,14 +1,14 @@
 //
-//  ThreeOneTableViewCell.swift
+//  ThreeTableViewCell.swift
 //  DayAt
 //
-//  Created by 1 on 2022/10/29.
+//  Created by 1 on 2022/10/28.
 //
 
 import UIKit
 
-class ThreeSupportCell: UITableViewCell {
-    static let identifier = "ThreeSupportCell"
+class MenuSetCell: UITableViewCell {
+    static let identifier = "ThreeSetCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -16,7 +16,24 @@ class ThreeSupportCell: UITableViewCell {
         label.textColor = UIColor.gray
         return label
     }()
-   
+    //    var qaLabel: UILabel = {
+    //        let label = UILabel()
+    //        label.font = UIFont.systemFont(ofSize: 15)
+    //        label.textColor = UIColor.black
+    //        return label
+    //    }()
+    //    var buyLabel: UILabel = {
+    //        let label = UILabel()
+    //        label.font = UIFont.systemFont(ofSize: 15)
+    //        label.textColor = UIColor.black
+    //        return label
+    //    }()
+    //    var useLabel: UILabel = {
+    //        let label = UILabel()
+    //        label.font = UIFont.systemFont(ofSize: 15)
+    //        label.textColor = UIColor.black
+    //        return label
+    //    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,7 +49,9 @@ class ThreeSupportCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
         configure()
-
+        //        addSubview(qaLabel)
+        //        addSubview(buyLabel)
+        //        addSubview(useLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -47,8 +66,8 @@ class ThreeSupportCell: UITableViewCell {
     }
 }
 
-extension ThreeSupportCell {
-    public func bind(model: ThreeViewTitle) {
+extension MenuSetCell {
+    public func bind(model: OneTitle) {
         titleLabel.text = model.title
     }
 }

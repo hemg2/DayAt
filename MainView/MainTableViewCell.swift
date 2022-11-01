@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-class FirstTableViewCell: UITableViewCell {
+class MainTableViewCell: UITableViewCell {
     static let identifier = "cell"
     
     var dateLabel: UILabel = {
@@ -89,16 +89,3 @@ class FirstTableViewCell: UITableViewCell {
     }
 
 }
-
-
-//extension FirstTableViewCell {
-//    public func bind(model: CustomCellModel) {
-//        titleLabel.text = model.leftTitle
-//        dateLabel.text = model.leftdey
-//        dayLabel.text = model.rightdate
-//
-//    }
-//}
-
-
-// 디데이 계산법 디데이 - 투데이 = 벨류값을 저장한다

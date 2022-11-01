@@ -46,7 +46,7 @@ class TranslationTableViewCell: UITableViewCell {
 }
 
 extension TranslationTableViewCell {
-    public func bind(model: EightTitle) {
+    public func bind(model: OneTitle) {
         translationLabel.text = model.title
         
     }

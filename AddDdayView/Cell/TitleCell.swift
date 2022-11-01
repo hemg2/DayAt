@@ -8,13 +8,14 @@
 import UIKit
 import SnapKit
 
-class SecondTitleCell: UITableViewCell, UITextFieldDelegate {
-    static let identifier = "SecondTitleCell"
+class TitleCell: UITableViewCell, UITextFieldDelegate {
+    static let identifier = "TitleCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = UIColor.gray
+        label.textAlignment = .left
         return label
     }()
     
@@ -27,6 +28,7 @@ class SecondTitleCell: UITableViewCell, UITextFieldDelegate {
         textfield.layer.cornerRadius = 1
         textfield.layer.borderWidth = 0
         textfield.layer.borderColor = UIColor.gray.cgColor.copy(alpha: 0.7)
+        textfield.textAlignment = .left
         
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: textfield.frame.height))
         textfield.leftView = paddingView

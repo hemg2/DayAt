@@ -46,9 +46,9 @@ class InstagramTableViewCell: UITableViewCell {
 }
 
 extension InstagramTableViewCell {
-    public func bind(model: EightTitle) {
+    public func bind(model: OneTitle) {
         instagramLabel.text = model.title
-        
+
     }
 }
 

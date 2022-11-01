@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThreeViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -20,13 +20,13 @@ class ThreeViewController: UIViewController {
         return button
     }
     @objc func left(_ sender: Any) {
-        let threeView = FirstViewController()
+        let threeView = MainViewController()
         self.navigationController?.pushViewController(threeView, animated: true)
     }
-    var dataSource = [ThreeViewTitle]()
-    var dataSource1 = [ThreeViewTitle]()
-    var dataSource2 = [ThreeViewTitle]()
-    var dataSource3 = [ThreeViewTitle]()
+    var dataSource = [OneTitle]()
+    var dataSource1 = [OneTitle]()
+    var dataSource2 = [OneTitle]()
+    var dataSource3 = [OneTitle]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +42,12 @@ class ThreeViewController: UIViewController {
     func tableViewLayout() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ThreeSetCell.self, forCellReuseIdentifier: "ThreeSetCell")
-        tableView.register(ThreeSupportCell.self, forCellReuseIdentifier: "ThreeSupportCell")
-        tableView.register(ThreeBuyCell.self, forCellReuseIdentifier: "ThreeBuyCell")
-        tableView.register(ThreesUseCell.self, forCellReuseIdentifier: "ThreesUseCell")
+        tableView.register(MenuSetCell.self, forCellReuseIdentifier: "ThreeSetCell")
+        tableView.register(menuSupportCell.self, forCellReuseIdentifier: "ThreeSupportCell")
+        tableView.register(MenuBuyCell.self, forCellReuseIdentifier: "ThreeBuyCell")
+        tableView.register(MenuUseCell.self, forCellReuseIdentifier: "ThreesUseCell")
         
-        tableView.rowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -65,7 +65,7 @@ class ThreeViewController: UIViewController {
     
 }
 
-extension ThreeViewController: UITableViewDataSource  {
+extension MenuViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return dataSource.count
@@ -81,22 +81,22 @@ extension ThreeViewController: UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeSetCell", for: indexPath) as! ThreeSetCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeSetCell", for: indexPath) as! MenuSetCell
             cell.bind(model: dataSource[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
         } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeSupportCell", for: indexPath) as! ThreeSupportCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeSupportCell", for: indexPath) as! menuSupportCell
             cell.bind(model: dataSource1[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
         } else if indexPath.section == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeBuyCell", for: indexPath) as! ThreeBuyCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeBuyCell", for: indexPath) as! MenuBuyCell
             cell.bind(model: dataSource2[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
         } else if indexPath.section == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreesUseCell", for: indexPath) as! ThreesUseCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreesUseCell", for: indexPath) as! MenuUseCell
             cell.bind(model: dataSource3[indexPath.row])
             cell.accessoryType = .disclosureIndicator
             return cell
@@ -105,7 +105,7 @@ extension ThreeViewController: UITableViewDataSource  {
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70  // 셀높이
+        return tableView.rowHeight  // 셀높이
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -114,13 +114,13 @@ extension ThreeViewController: UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
-            let redView = TestRedViewController()
+            let redView = SetViewController()
             self.navigationController?.pushViewController(redView, animated: true)
         } else if indexPath.section == 1 {
             let grayView = TestGrayViewController()
             self.navigationController?.pushViewController(grayView, animated: true)
         } else if indexPath.section == 2 {
-            let baclView = TestBlackViewController()
+            let baclView = SupportViewController()
             self.navigationController?.pushViewController(baclView, animated: true)
         }
     }
@@ -129,5 +129,5 @@ extension ThreeViewController: UITableViewDataSource  {
 }
 
 
-extension ThreeViewController: UITableViewDelegate {
+extension MenuViewController: UITableViewDelegate {
 }

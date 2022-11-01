@@ -42,7 +42,7 @@ class SetTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = UIColor.black
-        label.numberOfLines = 3
+        label.numberOfLines = 2
         return label
     }()
     var subtextLabel2: UILabel = {
@@ -55,7 +55,7 @@ class SetTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = UIColor.black
-        label.numberOfLines = 3
+        label.numberOfLines = 2
         return label
     }()
     var subtextLabel4: UILabel = {
@@ -68,6 +68,7 @@ class SetTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = UIColor.gray
+        label.numberOfLines = 2
         return label
     }()
     
@@ -102,7 +103,7 @@ class SetTableViewCell: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        contentView.addSubview(lastLabel)
         configure()
     }
     
@@ -159,7 +160,7 @@ class SetTableViewCell: UITableViewCell {
         lastLabel.snp.makeConstraints {
             $0.top.equalTo(230)
             $0.leading.equalTo(20)
-            addSubview(lastLabel)
+//            addSubview(lastLabel)
         }
     }
     

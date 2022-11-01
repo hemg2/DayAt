@@ -8,16 +8,18 @@
 import UIKit
 import SnapKit
 
-class SecondAlarmCell: UITableViewCell {
-    static let identifier = "SecondAlarmCell"
+class AlarmCell: UITableViewCell {
+    static let identifier = "AlarmCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 23)
         label.textColor = UIColor.darkGray
+        label.textAlignment = .left
         return label
     }()
-    var titleLabel1: UILabel = {
+    
+    var subTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = UIColor.darkGray
@@ -38,7 +40,7 @@ class SecondAlarmCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(titleLabel1)
+        contentView.addSubview(subTitleLabel)
         configure()
     }
     
@@ -51,17 +53,17 @@ class SecondAlarmCell: UITableViewCell {
             make.top.equalTo(5)
             make.leading.equalTo(15)
         }
-        titleLabel1.snp.makeConstraints { make in
+        subTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(12)
             make.trailing.equalTo(-10)
         }
     }
 }
 
-
-extension SecondAlarmCell {
-    public func sevenBind(model: SevenTitle) {
-        titleLabel.text = model.title
-        titleLabel1.text = model.subTitle
-    }
-}
+//
+//extension AlarmCell {
+//    public func sevenBind(model: SevenTitle) {
+//        titleLabel.text = model.title
+//        titleLabel1.text = model.subTitle
+//    }
+//}

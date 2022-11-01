@@ -16,11 +16,11 @@ class TestGrayViewController: UIViewController {
         return tableView
     }()
     
-    lazy var dataSource = [EightTitle]()
-    lazy var dataSource1 = [EightTitle]()
-    lazy var dataSource2 = [EightTitle]()
-    lazy var dataSource3 = [EightTitle]()
-    lazy var dataSource4 = [EightTitle]()
+     var dataSource = [OneTitle]()
+     var dataSource1 = [OneTitle]()
+     var dataSource2 = [OneTitle]()
+     var dataSource3 = [OneTitle]()
+     var dataSource4 = [OneTitle]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

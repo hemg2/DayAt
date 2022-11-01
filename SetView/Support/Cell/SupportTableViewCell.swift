@@ -71,7 +71,7 @@ class SupportTableViewCell: UITableViewCell {
 }
 
 extension SupportTableViewCell {
-    public func bind(model: EightTitle) {
+    public func bind(model: OneTitle) {
         evaluationLabel.text = model.title
         
     }

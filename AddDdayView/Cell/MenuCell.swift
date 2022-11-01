@@ -1,20 +1,23 @@
 //
-//  SecondEightTableViewCell.swift
+//  SecondTableViewCell.swift
 //  DayAt
 //
-//  Created by 1 on 2022/10/28.
+//  Created by 1 on 2022/10/27.
 //
 
 import UIKit
 import SnapKit
 
-class SecondCharacterCell: UITableViewCell {
-    static let identifier = "SecondCharacterCell"
+class MenuCell: UITableViewCell {
+    static let identifier = "MenuCell"
+    
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.textColor = UIColor.gray
+        label.textAlignment = .natural
+        label.baselineAdjustment = .alignCenters
         return label
     }()
     
@@ -31,7 +34,7 @@ class SecondCharacterCell: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(titleLabel)
+        addSubview(titleLabel)
         configure()
     }
     
@@ -39,17 +42,18 @@ class SecondCharacterCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func configure() {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
-            make.leading.equalTo(15)
+            make.leading.equalTo(center)
         }
     }
 }
 
 
-extension SecondCharacterCell {
-    public func eightBind(model: EightTitle) {
-        titleLabel.text = model.title
-    }
-}
+//extension MenuCell {
+//    public func bind(model: FirstTitle) {
+//        titleLabel.text = model.title
+//    }
+//}

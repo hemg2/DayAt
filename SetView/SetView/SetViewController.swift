@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TestRedViewController: UIViewController {
+class SetViewController: UIViewController {
    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -40,7 +40,7 @@ class TestRedViewController: UIViewController {
 
 }
 
-extension TestRedViewController: UITableViewDelegate, UITableViewDataSource {
+extension SetViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             SetTableViewCell()

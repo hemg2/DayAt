@@ -48,7 +48,7 @@ class OpinionTableViewCell: UITableViewCell {
 }
 
 extension OpinionTableViewCell {
-    public func bind(model: EightTitle) {
+    public func bind(model: OneTitle) {
         opinionLabel.text = model.title
         
     }

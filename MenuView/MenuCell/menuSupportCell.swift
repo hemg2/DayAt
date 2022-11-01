@@ -1,5 +1,5 @@
 //
-//  ThreesTableViewCell.swift
+//  ThreeOneTableViewCell.swift
 //  DayAt
 //
 //  Created by 1 on 2022/10/29.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ThreesUseCell: UITableViewCell {
-    static let identifier = "ThreesUseCell"
+class menuSupportCell: UITableViewCell {
+    static let identifier = "ThreeSupportCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
@@ -17,6 +17,7 @@ class ThreesUseCell: UITableViewCell {
         return label
     }()
    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,7 +32,7 @@ class ThreesUseCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
         configure()
-       
+
     }
     
     required init?(coder: NSCoder) {
@@ -46,8 +47,8 @@ class ThreesUseCell: UITableViewCell {
     }
 }
 
-extension ThreesUseCell {
-    public func bind(model: ThreeViewTitle) {
+extension menuSupportCell {
+    public func bind(model: OneTitle) {
         titleLabel.text = model.title
     }
 }

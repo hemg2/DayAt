@@ -1,5 +1,5 @@
 //
-//  SecondSixTableViewCell.swift
+//  SecondFiveTableViewCell.swift
 //  DayAt
 //
 //  Created by 1 on 2022/10/28.
@@ -7,51 +7,48 @@
 
 import UIKit
 import SnapKit
-
-class SecondSetCell: UITableViewCell {
-    static let identifier = "SecondSetCell"
+class EverydayCell: UITableViewCell {
+    static let identifier = "EverydayCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 23)
         label.textColor = UIColor.darkGray
+        label.textAlignment = .left
         return label
     }()
     
     private lazy var controlSwicth: UISwitch = {
         let swicth = UISwitch()
         swicth.setOn(true, animated: true)
-        swicth.isOn = true
+        swicth.isOn = false
         swicth.translatesAutoresizingMaskIntoConstraints = false
         swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
-        swicth.addTarget(self, action: #selector(onClickSwitch2(sender:)), for: .valueChanged)
-        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch2")
+        swicth.addTarget(self, action: #selector(onClickSwitch(sender:)), for: .valueChanged)
+        UserDefaults.standard.set(swicth.isOn, forKey: "onClickSwitch")
         return swicth
     }()
     
-    @objc func onClickSwitch2(sender: UISwitch) {
-//        var color: UIColor
-//        print("콕콕콕")
+    @objc func onClickSwitch(sender: UISwitch) {
+        var color: UIColor
         if sender.isOn {
-//            color = UIColor.gray
+            color = UIColor.gray
             print("on")
         } else {
-//            color = UIColor.orange
+            color = UIColor.black
             print("off")
         }
-//        self.backgroundColor = color
+        self.backgroundColor = color
     }
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -77,10 +74,9 @@ class SecondSetCell: UITableViewCell {
     }
 }
 
-
-extension SecondSetCell {
-    public func sixBind(model: SixTitle) {
-        titleLabel.text = model.title
-    }
-    
-}
+//
+//extension EverydayCell {
+//    public func fiveBind(model: FiveTitle) {
+//        titleLabel.text = model.title
+//    }
+//}

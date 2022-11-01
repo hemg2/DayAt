@@ -46,7 +46,7 @@ class FacebookTableViewCell: UITableViewCell {
 }
 
 extension FacebookTableViewCell {
-    public func bind(model: EightTitle) {
+    public func bind(model: OneTitle) {
         facebookLabel.text = model.title
         
     }

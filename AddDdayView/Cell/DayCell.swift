@@ -8,19 +8,21 @@
 import UIKit
 import SnapKit
 
-class SecondDayCell: UITableViewCell {
-    static let identifier = "SecondDayCell"
+class DayCell: UITableViewCell {
+    static let identifier = "DayCell"
     
     var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 23)
         label.textColor = UIColor.darkGray
+        label.textAlignment = .left
         return label
     }()
     var dayLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = UIColor.darkGray
+        label.textAlignment = .right
         return label
     }()
     
@@ -37,7 +39,6 @@ class SecondDayCell: UITableViewCell {
     
     @objc func onDidChangeDate(sender: UIDatePicker){
         let dateFormatter: DateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy/MM/dd hh:mm:"
         dateFormatter.dateFormat = "yyyy/MM/dd"
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
@@ -79,15 +80,15 @@ class SecondDayCell: UITableViewCell {
         }
         datePicker.snp.makeConstraints { make in
             make.top.equalTo(5)
-            make.leading.equalTo(110)
+            make.leading.equalTo(125)
         }
     }
 }
 
 
-extension SecondDayCell {
-    public func threeBind(model: ThreeTitle) {
-        titleLabel.text = model.title
-        dayLabel.text = model.subTitle
-    }
-}
+//extension DayCell {
+//    public func threeBind(model: ThreeTitle) {
+//        titleLabel.text = model.title
+//        dayLabel.text = model.subTitle
+//    }
+//}
