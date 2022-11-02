@@ -110,6 +110,14 @@
 			path = AlarmView;
 			sourceTree = "<group>";
 		};
+		6379A806291268BF00E1DB6E /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				63BEC08C290A0E89006487BC /* MainTableViewCell.swift */,
+			);
+			path = MainCell;
+			sourceTree = "<group>";
+		};
 		63BEC069290A0B02006487BC = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				63BEC08A290A0E41006487BC /* MainViewController.swift */,
-				63BEC08C290A0E89006487BC /* MainTableViewCell.swift */,
+				6379A806291268BF00E1DB6E /* MainCell */,
 			);
 			path = MainView;
 			sourceTree = "<group>";

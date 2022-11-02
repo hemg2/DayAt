@@ -32,10 +32,10 @@ class EverydayCell: UITableViewCell {
     @objc func onClickSwitch(sender: UISwitch) {
         var color: UIColor
         if sender.isOn {
-            color = UIColor.gray
+            color = UIColor.green
             print("on")
         } else {
-            color = UIColor.black
+            color = UIColor.systemBackground
             print("off")
         }
         self.backgroundColor = color

@@ -74,7 +74,7 @@ class AddViewController: UIViewController {
             secondTableView.register(CharacterCell.self, forCellReuseIdentifier: "CharacterCell")
             secondTableView.rowHeight = UITableView.automaticDimension
 //            UIView.setAnimationsEnabled(true)
-//            secondTableView.rowHeight = UITableView.automaticDimension
+            secondTableView.rowHeight = UITableView.automaticDimension
 //            secondTableView.estimatedRowHeight = 130
             secondTableView.delegate = self
             secondTableView.dataSource = self

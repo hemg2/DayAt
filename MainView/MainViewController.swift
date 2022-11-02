@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         return button
     }
     var leftNavButton: UIBarButtonItem {
-        let button = UIBarButtonItem(title: "-", style: .plain, target: self, action: #selector(left))
+        let button = UIBarButtonItem(title: "≡", style: .plain, target: self, action: #selector(left))
         return button
     }
     
@@ -45,6 +45,10 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(threeView, animated: true)
     }
     
+        
+        
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -89,7 +93,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             MainTableViewCell()
             return 1
-        } else if section == 1 {
+        }
+        else if section == 1 {
             MainTableViewCell()
         }
         return 0
