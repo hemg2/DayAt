@@ -8,16 +8,9 @@
 import UIKit
 import SnapKit
 
+
 class TitleCell: UITableViewCell, UITextFieldDelegate {
     static let identifier = "TitleCell"
-    
-    var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30)
-        label.textColor = UIColor.gray
-        label.textAlignment = .left
-        return label
-    }()
     
     var textfield : UITextField = {
        let textfield = UITextField()

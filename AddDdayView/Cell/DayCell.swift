@@ -80,7 +80,7 @@ class DayCell: UITableViewCell {
         }
         datePicker.snp.makeConstraints { make in
             make.top.equalTo(5)
-            make.leading.equalTo(125)
+            make.leading.equalTo(115)
         }
     }
 }

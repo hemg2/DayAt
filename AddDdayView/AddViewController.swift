@@ -9,13 +9,14 @@ import UIKit
 import SnapKit
 
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
     
     let ud = UserDefaults.standard
+    weak var a = MainTableViewCell()
+    weak var titleTextField = TitleCell()
+    weak var datepicker = DayCell()
     
-    let a = MainTableViewCell()
-    let aa = TitleCell()
-    let datepicker = DayCell()
+    var dataModel = [TextFieldModel]()
     
     private lazy var secondTableView: UITableView = {
         let tableView = UITableView()
@@ -30,9 +31,10 @@ class AddViewController: UIViewController {
     
     @objc func add(_ sender: Any) {
 //        ud.set(aa.textfield.text, forKey: "title") //값저장
-        ud.set(aa.self.textfield.text, forKey: "title")
-        ud.set("- 서울!", forKey: "title2")
-        ud.set(datepicker.self.datePicker.date, forKey: "day")
+        ud.set(titleTextField?.textfield.text, forKey: "title")
+        
+//        ud.set("- 서울!", forKey: "title2")
+//        ud.set(datepicker.datePicker.date, forKey: "day")
 //        print("add\(ud.set(aa.textfield.text, forKey: "title"))")
         self.navigationController?.popViewController(animated: true)
     }
@@ -53,7 +55,7 @@ class AddViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "NEW"
         self.navigationItem.rightBarButtonItem = self.rightNavButton
-        ud.set(aa.textfield.text, forKey: "title")
+        ud.set(titleTextField?.textfield.text, forKey: "title")
         tableViewLayout()
         loadData()
        
@@ -129,18 +131,28 @@ extension AddViewController: UITableViewDataSource {
             
         } else if indexPath.section == 1 {
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
-            cell1.textfield.text = ""
+            
+            cell1.textfield.tag = indexPath.row
+            cell1.textfield.delegate = self
+            //            print("무엇이 진짜냐 \(cell1.textfield.text?.isEmpty)")
+            //            print("무엇이 써지냐 \(cell1.textfield.text)")
+            //            cell1.textfield.text = dataModel[indexPath.row].titleFieldData
             ud.set(cell1.textfield.text, forKey: "title")
-            print("cell \(ud.set(cell1.textfield.text, forKey: "title"))")
-//            cell1.textfield.text = ud.set(aa.textfield.text, forKey: "title")
+            //            print("cell저장되나? \(ud.set(cell1.textfield.text, forKey: "title"))")
+            //            cell1.textfield.text = "\(ud.set(aa.textfield.text, forKey: "title"))"
+            titleTextField = cell1
             return cell1
-
+            
+            
             
         } else if indexPath.section == 2 {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath) as! DayCell
             cell2.titleLabel.text = "날짜 선택"
             cell2.dayLabel.text = "기본 달력"
+            ud.set(cell2.datePicker.date, forKey: "day")
+            datepicker = cell2
             return cell2
+            
         } else if indexPath.section == 3 {
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "TermCell", for: indexPath) as! TermCell
             cell3.titleLabel.text = "기간으로 설정"
@@ -177,7 +189,7 @@ extension AddViewController: UITableViewDataSource {
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10//testModels.count// 걍 숫자로 표현 셀 갯수
+        return 10       // 걍 숫자로 표현 셀 갯수
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

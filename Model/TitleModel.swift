@@ -33,3 +33,12 @@ struct Support {
     let fore: String
     let five: String
 }
+
+
+struct TextFieldModel {
+    var titleFieldData: String?
+    
+    init(titleFieldData: String) {
+        self.titleFieldData = titleFieldData
+    }
+}

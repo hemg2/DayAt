@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITextFieldDelegate {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         view.addSubview(tableView)
@@ -103,18 +103,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MainTableViewCell
         else { fatalError() }
-//        cell.bind(model: dataSource[indexPath.row])
         cell.dateLabel.text = "\(formatter.string(from: Date()))" + "\(cell.dateLabel.text = UserDefaults.standard.string(forKey: "day"))"
+        
+        
         print("date피커2번확인\(String(describing: UserDefaults.standard.string(forKey: "day")))")
-//        if let a = UserDefaults.standard.string(forKey: "title") {
-//            cell.titleLabel.text = a
-//        }
-        cell.titleLabel.text = "\(String(describing: UserDefaults.standard.string(forKey: "title")!))"
-        +        "\(String(describing: UserDefaults.standard.string(forKey: "title2")!))"// 값불러오기
-        print("뷰컨1번확인\(String(describing: UserDefaults.standard.string(forKey: "title1")))")
-        print("뷰컨2번확인\(String(describing: UserDefaults.standard.string(forKey: "title2")))")
-        
-        
+
+        cell.titleLabel.text = "제목: \(String(describing: UserDefaults.standard.string(forKey: "title")!))"
+//        print("뷰컨1번확인\(String(describing: UserDefaults.standard.string(forKey: "title1")))") 값불러오기
         cell.dayLabel.text = "%"
 //        cell.dayLabel.text = "\((formatter.string(from: Date())))" - "\((UserDefaults.standard.string(forKey: "day")))%"
         return cell
