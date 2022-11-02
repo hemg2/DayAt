@@ -20,7 +20,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         f.dateStyle = .long
         f.timeStyle = .short
         f.locale = Locale(identifier: "ko_kr")
-        f.dateFormat = "yyyy/MM/dd - " //HH:mm:ss
+        f.dateFormat = "yyyy/MM/dd ~" //HH:mm:ss
         return f
     }()
     
@@ -96,6 +96,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else if section == 1 {
             MainTableViewCell()
+            return 2
         }
         return 0
     }
@@ -103,12 +104,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MainTableViewCell
         else { fatalError() }
-        cell.dateLabel.text = "\(formatter.string(from: Date()))" + "\(cell.dateLabel.text = UserDefaults.standard.string(forKey: "day"))"
+        
+        let currentTime = formatter.string(from: Date())
+        let selectionTime = UserDefaults.standard.string(forKey: "day")
+        cell.currentTime.text = currentTime
+        + "\(cell.selectionTimeLabel.text = "\(String(describing: selectionTime))")"
         
         
         print("date피커2번확인\(String(describing: UserDefaults.standard.string(forKey: "day")))")
 
-        cell.titleLabel.text = "제목: \(String(describing: UserDefaults.standard.string(forKey: "title")!))"
+        cell.titleLabel.text = "\(String(describing: UserDefaults.standard.string(forKey: "title")!))"
 //        print("뷰컨1번확인\(String(describing: UserDefaults.standard.string(forKey: "title1")))") 값불러오기
         cell.dayLabel.text = "%"
 //        cell.dayLabel.text = "\((formatter.string(from: Date())))" - "\((UserDefaults.standard.string(forKey: "day")))%"

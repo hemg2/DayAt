@@ -38,11 +38,14 @@ class DayCell: UITableViewCell {
     }()
     
     @objc func onDidChangeDate(sender: UIDatePicker){
+        let swiftDatePickerView = sender
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-//        let selectedDate: String = dateFormatter.string(from: sender.date)
+        let selectedDate = dateFormatter.string(from: sender.date)
+        UserDefaults.standard.set(swiftDatePickerView.date, forKey: "day")
+        UserDefaults.standard.set(selectedDate, forKey: "day")
         
 
     }
@@ -62,6 +65,7 @@ class DayCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(dayLabel)
         contentView.addSubview(datePicker)
+        
         configure()
     }
     

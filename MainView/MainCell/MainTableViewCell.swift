@@ -10,10 +10,16 @@ import SnapKit
 class MainTableViewCell: UITableViewCell {
     static let identifier = "cell"
     
-    var dateLabel: UILabel = {
+    var currentTime: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = UIColor.red
+        label.textColor = UIColor.black
+        return label
+    }()
+    var selectionTimeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor.black
         return label
     }()
     var titleLabel: UILabel = {
@@ -60,7 +66,8 @@ class MainTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(dateLabel)
+        contentView.addSubview(currentTime)
+        contentView.addSubview(selectionTimeLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(dayLabel)
         contentView.addSubview(slider)
@@ -72,9 +79,13 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func configure() {
-        dateLabel.snp.makeConstraints { make in
+        currentTime.snp.makeConstraints { make in
             make.top.equalTo(15)
             make.leading.equalTo(15)
+        }
+        selectionTimeLabel.snp.makeConstraints { make in
+            make.top.equalTo(15)
+            make.leading.equalTo(120)
         }
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(40)

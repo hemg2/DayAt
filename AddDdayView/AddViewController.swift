@@ -12,7 +12,7 @@ import SnapKit
 class AddViewController: UIViewController, UITextFieldDelegate {
     
     let ud = UserDefaults.standard
-    weak var a = MainTableViewCell()
+    weak var mainView = MainTableViewCell()
     weak var titleTextField = TitleCell()
     weak var datepicker = DayCell()
     
@@ -32,7 +32,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @objc func add(_ sender: Any) {
 //        ud.set(aa.textfield.text, forKey: "title") //값저장
         ud.set(titleTextField?.textfield.text, forKey: "title")
-        
+        ud.set(datepicker?.datePicker.date, forKey: "day")
+        print("add 피커\(ud.set(datepicker?.datePicker.date, forKey: "day"))")
 //        ud.set("- 서울!", forKey: "title2")
 //        ud.set(datepicker.datePicker.date, forKey: "day")
 //        print("add\(ud.set(aa.textfield.text, forKey: "title"))")
@@ -126,30 +127,25 @@ extension AddViewController: UITableViewDataSource {
         if  indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
             
-            cell.titleLabel.text = "D-day 설정"
+            cell.titleLabel.text = "시간"
             return cell
             
         } else if indexPath.section == 1 {
             let cell1 = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
-            
             cell1.textfield.tag = indexPath.row
             cell1.textfield.delegate = self
-            //            print("무엇이 진짜냐 \(cell1.textfield.text?.isEmpty)")
-            //            print("무엇이 써지냐 \(cell1.textfield.text)")
-            //            cell1.textfield.text = dataModel[indexPath.row].titleFieldData
             ud.set(cell1.textfield.text, forKey: "title")
-            //            print("cell저장되나? \(ud.set(cell1.textfield.text, forKey: "title"))")
-            //            cell1.textfield.text = "\(ud.set(aa.textfield.text, forKey: "title"))"
             titleTextField = cell1
             return cell1
-            
             
             
         } else if indexPath.section == 2 {
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath) as! DayCell
             cell2.titleLabel.text = "날짜 선택"
             cell2.dayLabel.text = "기본 달력"
+            
             ud.set(cell2.datePicker.date, forKey: "day")
+            print("입력란 \( ud.set(cell2.datePicker.date, forKey: "day"))")
             datepicker = cell2
             return cell2
             
