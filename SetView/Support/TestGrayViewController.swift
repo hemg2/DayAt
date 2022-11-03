@@ -107,8 +107,11 @@ extension TestGrayViewController: UITableViewDelegate, UITableViewDataSource {
 //        return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 60
     }
+    //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return UITableView.automaticDimension
+    //    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }

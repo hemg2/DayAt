@@ -32,7 +32,7 @@ class AlarmViewController: UIViewController {
     var todaySwicth: UISwitch = {
         let swicth = UISwitch()
         swicth.setOn(true, animated: true)
-        swicth.isOn = true
+        swicth.isOn = false
         swicth.translatesAutoresizingMaskIntoConstraints = false
         swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         swicth.addTarget(self, action: #selector(onClickSwitch3(sender:)), for: .valueChanged)
@@ -42,7 +42,7 @@ class AlarmViewController: UIViewController {
     var yesterdaySwicth: UISwitch = {
         let swicth = UISwitch()
         swicth.setOn(true, animated: true)
-        swicth.isOn = true
+        swicth.isOn = false
         swicth.translatesAutoresizingMaskIntoConstraints = false
         swicth.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
         swicth.addTarget(self, action: #selector(onClickSwitch3(sender:)), for: .valueChanged)

@@ -124,7 +124,10 @@ extension MenuViewController: UITableViewDataSource  {
             self.navigationController?.pushViewController(baclView, animated: true)
         }
     }
-
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     
 }
 

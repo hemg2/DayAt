@@ -13,6 +13,12 @@ struct CustomCellModel {
     let leftTitle: String
     let leftdey: String
     let rightdate: String
+    
+    init(leftTitle: String, leftdey: String, rightdate: String) {
+        self.leftTitle = leftTitle
+        self.leftdey = leftdey
+        self.rightdate = rightdate
+    }
 }
 
 struct OneTitle {

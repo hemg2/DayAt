@@ -59,7 +59,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.leftBarButtonItem = leftNavButton
         
         tableViewLayout()
-//        loadData()
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +79,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-//    func loadData() {
+    func loadData() {
+        dataSource.append(.init(leftTitle: " ", leftdey: " ", rightdate: " "))
+    }
 //        dataSource.append(.init(leftTitle: "제목1", leftdey: "1월~12월1", rightdate: "01%"))
 //        dataSource.append(.init(leftTitle: "제목2", leftdey: "1월~12월2", rightdate: "02%"))
 //        dataSource.append(.init(leftTitle: "제목3", leftdey: "1월~12월3", rightdate: "03%"))
@@ -91,15 +93,15 @@ class MainViewController: UIViewController, UITextFieldDelegate {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            MainTableViewCell()
-            return 1
-        }
-        else if section == 1 {
-            MainTableViewCell()
-            return 2
-        }
-        return 10
+//        if section == 0 {
+//            MainTableViewCell()
+//            return 1
+//        }
+//        else if section == 1 {
+//            MainTableViewCell()
+//            return 2
+//        }
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
