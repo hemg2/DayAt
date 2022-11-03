@@ -20,9 +20,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         f.dateStyle = .long
         f.timeStyle = .short
         f.locale = Locale(identifier: "ko_kr")
-        f.dateFormat = "yyyy/MM/dd ~" //HH:mm:ss
+        f.dateFormat = "yyyy/MM/dd " //HH:mm:ss
         return f
     }()
+    weak var delegate: DateTimePickerVCDelegate?
     
     var dataSource = [CustomCellModel]()
     
@@ -71,7 +72,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
             tableView.translatesAutoresizingMaskIntoConstraints = false
             tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "cell")
-//            tableView.rowHeight = UITableView.automaticDimension
+            tableView.rowHeight = UITableView.automaticDimension
             tableView.rowHeight = 100
             tableView.delegate = self
             tableView.dataSource = self
@@ -98,7 +99,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             MainTableViewCell()
             return 2
         }
-        return 0
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,6 +108,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let currentTime = formatter.string(from: Date())
         let selectionTime = UserDefaults.standard.string(forKey: "day")
+        
         cell.currentTime.text = currentTime
         + "\(cell.selectionTimeLabel.text = "\(String(describing: selectionTime))")"
         
@@ -115,8 +117,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.titleLabel.text = "\(String(describing: UserDefaults.standard.string(forKey: "title")!))"
 //        print("뷰컨1번확인\(String(describing: UserDefaults.standard.string(forKey: "title1")))") 값불러오기
-        cell.dayLabel.text = "%"
-//        cell.dayLabel.text = "\((formatter.string(from: Date())))" - "\((UserDefaults.standard.string(forKey: "day")))%"
+        
+       
+//        cell.dayLabel.text = "%"
+        cell.dayLabel.text = "(\(currentTime) - \(String(describing: selectionTime))%)"
         return cell
     }
     
@@ -132,7 +136,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
         let actions1 = UIContextualAction(style: .normal, title: "Delete", handler: { action, view, completionHaldler in
             completionHaldler(true)
-//            let cell = self.dataSource.remove(at: indexPath.row)
+            let cell = self.dataSource.remove(at: indexPath.row)
             let _ = UserDefaults.standard.removeObject(forKey: "title")
             tableView.reloadData()
         })

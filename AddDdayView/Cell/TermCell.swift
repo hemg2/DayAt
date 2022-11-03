@@ -35,12 +35,12 @@ class TermCell: UITableViewCell {
     @objc func onClickSwitch3(sender: UISwitch) {
 //        var color: UIColor
 //        print("콕콕콕")
+        var on = SwitchOnCell()
+        var off = DayCell()
         if sender.isOn {
-//            color = UIColor.green
-//            print("on")
+            on.isHidden
         } else {
-//            color = UIColor.gray
-//            print("off")
+            off.isHidden
         }
 //        self.backgroundColor = color
     }

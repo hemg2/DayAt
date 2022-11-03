@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6379A805291125A800E1DB6E /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6379A804291125A800E1DB6E /* AlarmViewController.swift */; };
+		6379A80829137EB800E1DB6E /* SwitchOnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6379A80729137EB800E1DB6E /* SwitchOnCell.swift */; };
 		63BEC076290A0B02006487BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC075290A0B02006487BC /* AppDelegate.swift */; };
 		63BEC078290A0B02006487BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BEC077290A0B02006487BC /* SceneDelegate.swift */; };
 		63BEC07F290A0B04006487BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BEC07E290A0B04006487BC /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		4D25EF7D925AD25151370561 /* Pods_DayAt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayAt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6379A804291125A800E1DB6E /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		6379A80729137EB800E1DB6E /* SwitchOnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchOnCell.swift; sourceTree = "<group>"; };
 		63BEC072290A0B02006487BC /* DayAt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayAt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BEC075290A0B02006487BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BEC077290A0B02006487BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				63BEC094290A6A22006487BC /* MenuCell.swift */,
 				63BEC096290A6F35006487BC /* TitleCell.swift */,
 				63BEC098290A6F59006487BC /* DayCell.swift */,
+				6379A80729137EB800E1DB6E /* SwitchOnCell.swift */,
 				63BEC09B290BBE87006487BC /* TermCell.swift */,
 				63BEC09D290BBE9E006487BC /* EverydayCell.swift */,
 				63BEC09F290BBEFB006487BC /* SetCell.swift */,
@@ -390,6 +393,7 @@
 				63BEC0C5290E66CE006487BC /* InstagramTableViewCell.swift in Sources */,
 				63BEC099290A6F59006487BC /* DayCell.swift in Sources */,
 				63BEC076290A0B02006487BC /* AppDelegate.swift in Sources */,
+				6379A80829137EB800E1DB6E /* SwitchOnCell.swift in Sources */,
 				63BEC0B7290E467B006487BC /* SupportViewController.swift in Sources */,
 				63BEC08D290A0E89006487BC /* MainTableViewCell.swift in Sources */,
 				63BEC09C290BBE87006487BC /* TermCell.swift in Sources */,

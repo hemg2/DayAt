@@ -8,13 +8,16 @@
 import UIKit
 import SnapKit
 
+protocol DateTimePickerVCDelegate: AnyObject {
+    func updateDateTime(_ dateTime: String)
+}
 
-class AddViewController: UIViewController, UITextFieldDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     let ud = UserDefaults.standard
-    weak var mainView = MainTableViewCell()
+//    weak var mainView = MainTableViewCell()
     weak var titleTextField = TitleCell()
-    weak var datepicker = DayCell()
+    weak var datePicker = DayCell()
     
     var dataModel = [TextFieldModel]()
     
@@ -30,14 +33,13 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func add(_ sender: Any) {
-//        ud.set(aa.textfield.text, forKey: "title") //값저장
-        ud.set(titleTextField?.textfield.text, forKey: "title")
-        ud.set(datepicker?.datePicker.date, forKey: "day")
-        print("add 피커\(ud.set(datepicker?.datePicker.date, forKey: "day"))")
-//        ud.set("- 서울!", forKey: "title2")
+        ud.set(titleTextField?.textfield.text, forKey: "title") //값저장
+        ud.set(datePicker?.datePicker.date, forKey: "day")
+//        print("add 피커\(ud.set(datePicker?.datePicker.date, forKey: "day"))")
 //        ud.set(datepicker.datePicker.date, forKey: "day")
 //        print("add\(ud.set(aa.textfield.text, forKey: "title"))")
         self.navigationController?.popViewController(animated: true)
+        initUi()
     }
     
     var dataSource = [OneTitle]()
@@ -61,6 +63,14 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         loadData()
        
     }
+    func initUi() {
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.delegate = self
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return true
+    }
    
     
     func tableViewLayout() {
@@ -75,13 +85,13 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             secondTableView.register(SetCell.self, forCellReuseIdentifier: "SetCell")
             secondTableView.register(AlarmCell.self, forCellReuseIdentifier: "AlarmCell")
             secondTableView.register(CharacterCell.self, forCellReuseIdentifier: "CharacterCell")
+            secondTableView.register(SwitchOnCell.self, forCellReuseIdentifier: "SwitchOnCell")
             secondTableView.rowHeight = UITableView.automaticDimension
-//            UIView.setAnimationsEnabled(true)
-            secondTableView.rowHeight = UITableView.automaticDimension
-//            secondTableView.estimatedRowHeight = 130
+            
+            //secondTableView.rowHeight = 150
+            secondTableView.estimatedRowHeight = 500
             secondTableView.delegate = self
             secondTableView.dataSource = self
-//            secondTableView.allowsMultipleSelection = true
         }
     }
     
@@ -144,10 +154,21 @@ extension AddViewController: UITableViewDataSource {
             cell2.titleLabel.text = "날짜 선택"
             cell2.dayLabel.text = "기본 달력"
             
+         //   cell2.datePicker.tag = indexPath.row
+            
             ud.set(cell2.datePicker.date, forKey: "day")
             print("입력란 \( ud.set(cell2.datePicker.date, forKey: "day"))")
-            datepicker = cell2
+            datePicker = cell2
             return cell2
+            
+        } else if indexPath.section == 2 {
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: "SwitchOnCell", for: indexPath) as! SwitchOnCell
+            cell3.titleLabel.text = "날짜 선택"
+            cell3.subtitleLabel.text = "기본달력"
+            cell3.startLabel.text = "시작"
+            cell3.endLabel.text = "종료"
+            return cell3
+            
             
         } else if indexPath.section == 3 {
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "TermCell", for: indexPath) as! TermCell
@@ -175,13 +196,13 @@ extension AddViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return secondTableView.rowHeight  // 셀높이
-    }
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return secondTableView.rowHeight  // 셀높이
+//    }
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
