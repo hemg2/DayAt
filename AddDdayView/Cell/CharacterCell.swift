@@ -43,6 +43,7 @@ class CharacterCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(15)
+            make.bottom.equalTo(-5)
         }
     }
 }

@@ -76,14 +76,17 @@ class DayCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(10)
+            make.bottom.equalTo(-5)
         }
         dayLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.trailing.equalTo(-15)
+            make.bottom.equalTo(-5)
         }
         datePicker.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(115)
+            make.bottom.equalTo(-5)
         }
     }
 }

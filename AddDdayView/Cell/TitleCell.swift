@@ -56,6 +56,7 @@ class TitleCell: UITableViewCell, UITextFieldDelegate {
         textfield.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(5)
+            make.bottom.equalTo(-5)
         }
     }
 }

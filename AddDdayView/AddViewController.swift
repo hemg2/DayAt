@@ -88,7 +88,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
             secondTableView.register(SwitchOnCell.self, forCellReuseIdentifier: "SwitchOnCell")
             secondTableView.rowHeight = UITableView.automaticDimension
             
-            //secondTableView.rowHeight = 150
+            secondTableView.rowHeight = UITableView.automaticDimension
             secondTableView.estimatedRowHeight = 500
             secondTableView.delegate = self
             secondTableView.dataSource = self
@@ -196,13 +196,13 @@ extension AddViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 //
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return secondTableView.rowHeight  // 셀높이
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return secondTableView.rowHeight  // 셀높이
+    }
 
     
     func numberOfSections(in tableView: UITableView) -> Int {

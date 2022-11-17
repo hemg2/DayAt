@@ -47,6 +47,7 @@ class MenuCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(center)
+            make.bottom.equalTo(-5)
         }
     }
 }

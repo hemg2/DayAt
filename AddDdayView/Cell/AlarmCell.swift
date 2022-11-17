@@ -52,10 +52,12 @@ class AlarmCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(15)
+            make.bottom.equalTo(-5)
         }
         subTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(12)
             make.trailing.equalTo(-10)
+            make.bottom.equalTo(-5)
         }
     }
 }

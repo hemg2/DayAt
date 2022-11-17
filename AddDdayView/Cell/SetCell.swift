@@ -70,10 +70,12 @@ class SetCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.leading.equalTo(15)
+            make.bottom.equalTo(-5)
         }
         controlSwicth.snp.makeConstraints { make in
             make.top.equalTo(5)
             make.trailing.equalTo(-15)
+            make.bottom.equalTo(-5)
         }
     }
 }
